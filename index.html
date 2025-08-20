@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fuga de Flamencos | Productora y Escuela de Flamenco en Seseña</title>
+  <meta name="description" content="Productora musical y agencia de mánagers especializada en flamenco en Seseña. Representación de artistas, organización de eventos y escuela con clases de baile, guitarra y cajón." />
+  <meta name="theme-color" content="#ff69b4" />
+  <link rel="canonical" href="https://fugadeflamencos.com/" />
+  <meta property="og:site_name" content="Fuga de Flamencos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:title" content="Fuga de Flamencos | Productora y Escuela de Flamenco en Seseña" />
+  <meta property="og:description" content="Productora musical y agencia de mánagers especializada en flamenco en Seseña. Representación de artistas, eventos y escuela (baile, guitarra y cajón)." />
+  <meta property="og:url" content="https://fugadeflamencos.com/" />
+  <meta property="og:image" content="https://i.imgur.com/2sA2Q5m.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fuga de Flamencos | Productora y Escuela de Flamenco en Seseña" />
+  <meta name="twitter:description" content="Productora musical, representación de artistas, eventos y escuela de flamenco en Seseña." />
+  <meta name="twitter:image" content="https://i.imgur.com/2sA2Q5m.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://use.fontawesome.com">
+  <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script async defer src="https://use.fontawesome.com/releases/v6.7.2/js/all.js" crossorigin="anonymous"></script>
+
+  <link rel="preload" as="image" href="https://i.imgur.com/2sA2Q5m.jpg" />
+
+  <style>
+    :root {
+      --primary-color: #ff69b4; /* Rosa Flamingo */
+      --accent-color: #ff1493;  /* Rosa brillante */
+      --secondary-color: #333333; /* Gris oscuro */
+      --background-color: #f5f5f5; /* Blanco/crema */
+      --text-color: #222;
+      --surface: #ffffff;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,.12);
+      --container: 1200px;
+      --divider-fg: rgba(255,105,180,.18);
+      --divider-bg: rgba(0,0,0,.06);
+      --transition: .25s ease;
+    }
+
+    /* Reset básico y estilos generales */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--secondary-color); background: var(--background-color); overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+
+    /* Accesibilidad */
+    .sr-only { position: absolute; left: -999px; top: auto; overflow: hidden; }
+    .skip-link { position: absolute; left: -999px; top: auto; overflow: hidden; }
+    .skip-link:focus { left: 1rem; top: 1rem; background: #000; color: #fff; padding: .5rem .75rem; border-radius: 8px; z-index: 1200; }
+
+    /* Utilidad scroll lock */
+    .menu-open { overflow: hidden; }
+
+    /* Layout */
+    .container { max-width: var(--container); margin-inline: auto; padding-inline: 20px; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--secondary-color); }
+    .section { padding: 80px 0; }
+    .section-dark { padding: 80px 0; background: #000; color: #fff; }
+    .section-title { color: var(--primary-color); margin: 0 0 12px; }
+    .section-title-dark { color: #fff; margin: 0 0 12px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .media { border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 36px; }
+    .class-list { list-style: none; padding: 0; margin: 12px 0 0 0; }
+
+    /* Separadores visuales */
+    .divider { height: 14px; border: 0; background: linear-gradient(90deg, var(--divider-fg), var(--divider-bg) 22%, var(--divider-bg) 78%, var(--accent-color, var(--primary-color)) 18%); opacity: .9; }
+
+    /* Botones */
+    .btn { display: inline-block; padding: 14px 26px; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform var(--transition), background-color var(--transition), color var(--transition); }
+    .btn-primary { background: var(--primary-color); color: #fff; }
+    .btn-primary:hover { background: var(--accent-color); transform: translateY(-3px); }
+    .btn-secondary { background: #fff; color: var(--primary-color); border: 2px solid var(--primary-color); }
+    .btn-secondary:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
+    .btn-primary-inverse { background: #fff; color: var(--primary-color); border: 2px solid #fff; }
+    .btn-primary-inverse:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
+
+    /* Header y navegación */
+    .header { position: sticky; top: 0; z-index: 1000; background: var(--background-color); box-shadow: 0 2px 5px rgba(0,0,0,.08); }
+    .header .bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .nav-list { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
+    .nav-link { display: inline-block; text-decoration: none; color: var(--secondary-color); padding: 10px 14px; border-radius: 999px; }
+    .nav-link:focus-visible, .nav-link:hover { color: var(--primary-color); background: rgba(255,105,180,.08); outline: none; }
+    .nav-toggle { display: none; }
+    .nav-close { display: none; }
+
+    .nav-toggle:focus-visible, .nav-close:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; }
+
+    /* Hero */
+    .hero { position: relative; min-height: 80vh; display: grid; place-items: center; text-align: center; color: #fff; background: no-repeat center/cover; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
+    .hero-content { position: relative; z-index: 1; padding: 0 1rem; }
+    .hero-title { font-size: clamp(2.2rem, 3vw, 4rem); margin: 0 0 10px; }
+    .hero-subtitle { font-size: clamp(1.1rem, 1.5vw, 1.5rem); margin: 0 0 28px; }
+
+    /* Secciones de contenido */
+    .section-text-box, .section-image-box { display: flex; flex-direction: column; justify-content: center; }
+    .card { background: var(--surface); border-radius: var(--radius-md); padding: 26px; text-align: center; box-shadow: var(--shadow); transition: transform var(--transition); }
+    .card:hover { transform: translateY(-6px); }
+    .card img { height: 60px; margin-inline: auto; margin-bottom: 20px; }
+
+    /* Artistas */
+    #artistas .container { display: block; }
+    .artist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 36px; }
+    .artist-card { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 26px; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
+    .artist-card:hover { transform: translateY(-8px); box-shadow: 0 12px 26px rgba(0,0,0,.18); }
+    .artist-card img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); margin: 0 auto 14px; }
+    .artist-card h4 { font-family: 'Playfair Display', serif; font-size: 1.35rem; margin: 0 0 8px; }
+    .artist-card p { font-size: .95rem; color: #666; margin: 0; }
+
+    /* Timeline (Eventos) */
+    .timeline { position: relative; margin-top: 32px; }
+    .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,.25); }
+    .event { position: relative; padding-left: 34px; margin: 18px 0; }
+    .event::before { content: ""; position: absolute; left: 4px; top: .3rem; width: 14px; height: 14px; border-radius: 50%; background: var(--primary-color); box-shadow: 0 0 0 3px rgba(255,105,180,.25); }
+    .event h4 { margin: 0 0 4px; }
+    .event .meta { opacity: .85; margin-bottom: 6px; }
+
+    /* CTAs */
+    .wide-cta { background: #000; color: #fff; text-align: center; padding: 60px 20px; }
+    .wide-cta p { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 24px; }
+
+    /* Footer */
+    .footer { background: var(--secondary-color); color: #fff; padding: 50px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; text-align: left; }
+    .footer-section h3 { margin: 0 0 16px; color: var(--primary-color); }
+    .footer-section a { text-decoration: none; color: #fff; transition: color var(--transition); }
+    .footer-section a:hover { color: var(--primary-color); }
+    .social-links { display: flex; gap: 18px; margin-top: 10px; }
+    .social-links img { height: 30px; filter: invert(1); }
+    .footer-bottom { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); text-align: center; }
+
+    /* Animaciones */
+    [data-animate] { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    [data-animate].visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      [data-animate] { opacity: 1; transform: none; }
+      .btn, .card, .artist-card { transition: none; }
+    }
+
+    /* Media Queries (Responsive) */
+    @media (max-width: 900px) {
+      .split, .grid-3, .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .section-text-box, .section-image-box { text-align: center; }
+      .section-image-box { order: -1; }
+      .card img { margin-bottom: 0; }
+      .footer-grid { text-align: center; }
+      .social-links { justify-content: center; }
+    }
+
+    /* ===== Navegación móvil mejorada ===== */
+    @media (max-width: 860px) {
+      h2 { font-size: 1.8rem; word-break: break-word; hyphens: auto; }
+      .nav-toggle { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid #ddd; background: #fff; padding: .5rem .65rem; border-radius: 10px; }
+      .nav-toggle:hover { cursor: pointer; }
+
+      /* El contenedor <nav> actúa como backdrop clicable */
+      .nav { position: fixed; inset: 0; z-index: 1100; display: flex; transform: translateX(100%); opacity: 0; pointer-events: none; transition: transform .3s ease-in-out, opacity .2s ease-in-out; }
+      .nav.is-open { transform: translateX(0); opacity: 1; pointer-events: auto; }
+
+      /* Panel deslizante */
+      .nav-list { flex-direction: column; justify-content: center; align-items: center; gap: 20px; background: var(--background-color); position: absolute; top: 0; right: 0; height: 100%; width: 75%; padding: 40px; box-shadow: -8px 0 30px rgba(0,0,0,.15); }
+      .nav-link { font-size: 1.25rem; width: 100%; text-align: center; border-radius: 8px; }
+
+      /* Botón cerrar */
+      .nav-close { display: block; position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 2rem; color: var(--secondary-color); cursor: pointer; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fugadeflamencos.com/#org",
+        "name": "Fuga de Flamencos",
+        "url": "https://fugadeflamencos.com/",
+        "logo": "https://i.imgur.com/G5g2B7B.png",
+        "image": "https://i.imgur.com/2sA2Q5m.jpg",
+        "address": {"@type": "PostalAddress","addressLocality": "Seseña","addressCountry": "ES"},
+        "contactPoint": {"@type": "ContactPoint","contactType": "Atención comercial","telephone": "+34 667 236 5000","email": "info@fugadeflamencos.com","areaServed": "ES","availableLanguage": ["es"]},
+        "sameAs": ["https://www.facebook.com/","https://www.instagram.com/","https://www.youtube.com/"]
+      },
+      {"@type": "WebSite","@id": "https://fugadeflamencos.com/#website","url": "https://fugadeflamencos.com/","name": "Fuga de Flamencos"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido</a>
+
+  <header class="header" id="top">
+    <div class="container bar">
+      <a class="logo" href="#top" aria-label="Fuga de Flamencos">
+        <img src="assets/images/fdf-header-logo.webp" alt="Logo de Fuga de Flamencos" loading="eager" decoding="sync" width="293" height="64">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">☰ Menú</button>
+      <nav id="siteNav" class="nav" aria-label="Navegación principal" aria-hidden="true">
+        <button class="nav-close" aria-label="Cerrar menú">×</button>
+        <ul class="nav-list">
+          <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
+          <li><a href="#produccion" class="nav-link">Producción</a></li>
+          <li><a href="#formacion" class="nav-link">Clases</a></li>
+          <li><a href="#artistas" class="nav-link">Artistas</a></li>
+          <li><a href="#eventos" class="nav-link">Eventos</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="background-image:url('assets/images/fdf-hero.webp')" role="region" aria-labelledby="h1-hero">
+      <div class="hero-content" data-animate>
+        <h1 id="h1-hero" class="hero-title">Fuga de Flamencos</h1>
+        <p class="hero-subtitle">Productora, representación y escuela de flamenco en Seseña 💃🎶</p>
+        <a href="#contacto" class="btn btn-primary">Únete a nuestra familia flamenca</a>
+      </div>
+      <hr class="divider" aria-hidden="true" />
+    </section>
+
+    <section id="quienes-somos" class="section" role="region" aria-labelledby="h2-quienes">
+      <div class="container split">
+        <div class="section-image-box media" data-animate>
+          <img src="https://i.imgur.com/H6z1P7k.jpg" alt="Público disfrutando de un evento flamenco en Seseña" loading="lazy" decoding="async" width="800" height="540">
+        </div>
+        <div class="section-text-box" data-animate>
+          <h2 id="h2-quienes" class="section-title">Producción musical, representación de artistas y organización de eventos en Seseña</h2>
+          <p>Somos una productora y agencia de mánagers especializada en flamenco. Ofrecemos producción musical, representación de artistas y organización de eventos. Nuestra misión es impulsar el talento flamenco y llevarlo a nuevas audiencias.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" aria-hidden="true" />
+
+    <div class="wide-cta" role="region" aria-label="Llamada a la acción para proyectos">
+      <p>¿Tienes un proyecto en mente? Cuéntanos tu idea y te proponemos un plan de producción a medida.</p>
+      <a class="btn btn-primary-inverse" href="#contacto">Quiero producir</a>
+    </div>
+
+    <section id="produccion" class="section" role="region" aria-labelledby="h2-produccion">
+      <div class="container">
+        <h2 id="h2-produccion" class="section-title" data-animate>Nuestros servicios</h2>
+        <p class="sr-only" id="desc-produccion">Producción musical, organización de eventos y representación de artistas de flamenco.</p>
+        <div class="grid-3" aria-describedby="desc-produccion">
+          <article class="card" data-animate>
+            <img src="https://i.imgur.com/4J7X9uA.png" alt="Icono de producción musical" loading="lazy" decoding="async" width="80" height="80">
+            <h3>Producción Musical</h3>
+            <p>Grabación, mezcla y masterización. Dirección artística y arreglos especializados en flamenco.</p>
+          </article>
+          <article class="card" id="servicio-eventos" data-animate>
+            <img src="https://i.imgur.com/D4s2k2P.png" alt="Icono de organización de eventos" loading="lazy" decoding="async" width="80" height="80">
+            <h3>Organización de Eventos</h3>
+            <p>Diseño y producción de experiencias: tablaos, conciertos y festivales.</p>
+          </article>
+          <article class="card" id="representacion" data-animate>
+            <img src="https://i.imgur.com/K8H9P7R.png" alt="Icono de representación de artistas" loading="lazy" decoding="async" width="80" height="80">
+            <h3>Representación de Artistas</h3>
+            <p>Gestión de carrera, booking y comunicación para impulsar tu proyección.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" aria-hidden="true" />
+
+    <div class="wide-cta" role="region" aria-label="Llamada a la acción para eventos">
+      <p>¿Organizas un evento? Te proponemos un cartel y plan técnico a tu medida.</p>
+      <a class="btn btn-primary-inverse" href="#contacto">Solicitar propuesta</a>
+    </div>
+
+    <section id="artistas" class="section" role="region" aria-labelledby="h2-artistas">
+      <div class="container">
+        <h2 id="h2-artistas" class="section-title" data-animate>Nuestros Artistas</h2>
+        <div class="artist-grid">
+          <article class="artist-card" data-animate>
+            <img src="https://i.imgur.com/E8w9k1g.jpg" alt="Retrato de Antonio &quot;El Cantaor&quot;" loading="lazy" decoding="async" width="180" height="180">
+            <h4>Antonio "El Cantaor"</h4>
+            <p>Prodigio del cante jondo. Voz que evoca la esencia pura del flamenco.</p>
+          </article>
+          <article class="artist-card" data-animate>
+            <img src="https://i.imgur.com/G7y4A8R.jpg" alt="Retrato de Lucía &quot;La Gitana&quot;" loading="lazy" decoding="async" width="180" height="180">
+            <h4>Lucía "La Gitana"</h4>
+            <p>Bailaora de corazón: fuerza de la tradición con toques de modernidad.</p>
+          </article>
+          <article class="artist-card" data-animate>
+            <img src="https://i.imgur.com/L9p2U1L.jpg" alt="Retrato de Paco &quot;El Virtuoso&quot;" loading="lazy" decoding="async" width="180" height="180">
+            <h4>Paco "El Virtuoso"</h4>
+            <p>Guitarrista reconocido por técnica impecable y composiciones innovadoras.</p>
+          </article>
+          <article class="artist-card" data-animate>
+            <img src="https://i.imgur.com/P1k2N5Q.jpg" alt="Retrato de Eva &quot;La Faraona&quot;" loading="lazy" decoding="async" width="180" height="180">
+            <h4>Eva "La Faraona"</h4>
+            <p>Baile con duende y pasión. Icono de la nueva generación flamenca.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacion" class="section-dark" role="region" aria-labelledby="h2-formacion">
+      <div class="container split">
+        <div class="section-image-box media" data-animate>
+          <img src="https://i.imgur.com/Z4w7n4N.jpg" alt="Clase de flamenco" loading="lazy" decoding="async" width="800" height="540">
+        </div>
+        <div class="section-text-box" data-animate>
+          <h2 id="h2-formacion" class="section-title-dark">Formación y Clases de Flamenco</h2>
+          <p>En nuestra escuela impartimos clases de baile, guitarra y cajón. Ayudamos a los nuevos talentos a crecer y brillar.</p>
+          <ul class="class-list">
+            <li>💃 Baile Flamenco</li>
+            <li>🎸 Guitarra Flamenca</li>
+            <li>🥁 Cajón Flamenco</li>
+          </ul>
+          <a href="tel:+346672365000" class="btn btn-secondary" style="margin-top:20px">¡Infórmate sin compromiso!</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="eventos" class="section-dark" role="region" aria-labelledby="h2-eventos">
+      <div class="container">
+        <h2 id="h2-eventos" class="section-title-dark" data-animate>Celebración de Eventos</h2>
+        <div class="timeline">
+          <div class="event" data-animate>
+            <h4>Festival Noche en Rojo</h4>
+            <div class="meta">Sevilla · Jul 2025 · 2.000 asistentes</div>
+            <p>Producción integral: booking, rider técnico y comunicación.</p>
+          </div>
+          <div class="event" data-animate>
+            <h4>Gala Benéfica Al Compás</h4>
+            <div class="meta">Seseña · May 2025 · Teatro Principal</div>
+            <p>Coordinación artística y dirección de escena.</p>
+          </div>
+          <div class="event" data-animate>
+            <h4>Tablao Corporativo</h4>
+            <div class="meta">Barcelona · Mar 2025 · Evento privado</div>
+            <p>Formato íntimo con trío de cante, guitarra y baile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <section class="footer-section" aria-labelledby="contacto-heading">
+          <h3 id="contacto-heading">Contacto</h3>
+          <p>Teléfono: <a href="tel:+346672365000">+34 667 236 5000</a></p>
+          <p>Email: <a href="mailto:info@fugadeflamencos.com">info@fugadeflamencos.com</a></p>
+          <p>Ubicación: Seseña, Toledo. España</p>
+        </section>
+        <section class="footer-section" aria-labelledby="siguenos-heading">
+          <h3 id="siguenos-heading">Síguenos en redes sociales</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook fa-3x"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram fa-3x"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube fa-3x"></i></a>
+          </div>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>Fuga de Flamencos &copy; <span id="year"></span>. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Año dinámico
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // ===== Menú responsive accesible =====
+      const navToggle = document.getElementById('navToggle');
+      const siteNav = document.getElementById('siteNav');
+      const navClose = siteNav.querySelector('.nav-close');
+      const navLinks = siteNav.querySelectorAll('.nav-link');
+      let lastFocus = null;
+
+      const openMenu = () => {
+        lastFocus = document.activeElement;
+        document.body.classList.add('menu-open');
+        siteNav.classList.add('is-open');
+        siteNav.setAttribute('aria-hidden', 'false');
+        navToggle.setAttribute('aria-expanded', 'true');
+        // Llevar foco al primer enlace
+        navLinks[0]?.focus();
+      };
+
+      const closeMenu = () => {
+        siteNav.classList.remove('is-open');
+        siteNav.setAttribute('aria-hidden', 'true');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        // Devolver foco al botón que abrió
+        lastFocus?.focus();
+      };
+
+      const toggleMenu = () => {
+        const isOpen = siteNav.classList.contains('is-open');
+        isOpen ? closeMenu() : openMenu();
+      };
+
+      navToggle.addEventListener('click', toggleMenu);
+      navClose.addEventListener('click', closeMenu);
+      // Cerrar al pulsar en backdrop (área fuera del panel)
+      siteNav.addEventListener('click', (e) => { if (e.target === siteNav) closeMenu(); });
+      // Cerrar al navegar a una ancla
+      navLinks.forEach(link => link.addEventListener('click', closeMenu));
+      // Cerrar con ESC
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && siteNav.classList.contains('is-open')) closeMenu(); });
+      // Reset al pasar a escritorio
+      const mql = window.matchMedia('(min-width: 861px)');
+      mql.addEventListener('change', (e) => { if (e.matches) closeMenu(); });
+
+      // ===== Revelado en scroll =====
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
