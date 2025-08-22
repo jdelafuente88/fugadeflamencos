@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
   
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
   <script async defer src="https://use.fontawesome.com/releases/v6.7.2/js/all.js" crossorigin="anonymous"></script>
 
   <link rel="preload" as="image" href="https://i.imgur.com/2sA2Q5m.jpg" />
@@ -106,12 +107,21 @@
     .hero-content { position: relative; z-index: 1; padding: 0 1rem; }
     .hero-title { font-size: clamp(2.2rem, 3vw, 4rem); margin: 0 0 10px; }
     .hero-subtitle { font-size: clamp(1.1rem, 1.5vw, 1.5rem); margin: 0 0 28px; }
-
+    .titulo-estilo {
+		font-family: 'Monoton', cursive;
+		font-size: 5rem;
+		background: linear-gradient(90deg, #ff1ead, #8e7bf1, #00f0ff);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+    }
+        
     /* Secciones de contenido */
     .section-text-box, .section-image-box { display: flex; flex-direction: column; justify-content: center; }
     .card { background: var(--surface); border-radius: var(--radius-md); padding: 26px; text-align: center; box-shadow: var(--shadow); transition: transform var(--transition); }
     .card:hover { transform: translateY(-6px); }
-    .card img { height: 60px; margin-inline: auto; margin-bottom: 20px; }
+    .card img { margin-inline: auto; margin-bottom: 20px; }
 
     /* Artistas */
     #artistas .container { display: block; }
@@ -180,6 +190,7 @@
       /* Botón cerrar */
       .nav-close { display: block; position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 2rem; color: var(--secondary-color); cursor: pointer; }
     }
+        
   </style>
 
   <script type="application/ld+json">
@@ -214,10 +225,10 @@
       <nav id="siteNav" class="nav" aria-label="Navegación principal" aria-hidden="true">
         <button class="nav-close" aria-label="Cerrar menú">×</button>
         <ul class="nav-list">
-          <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
-          <li><a href="#produccion" class="nav-link">Producción</a></li>
-          <li><a href="#formacion" class="nav-link">Clases</a></li>
+          <li><a href="#quienes-somos" class="nav-link">¿Quiénes somos?</a></li>
+          <li><a href="#produccion" class="nav-link">¿Qué ofrecemos?</a></li>
           <li><a href="#artistas" class="nav-link">Artistas</a></li>
+          <li><a href="#formacion" class="nav-link">Escuela</a></li>
           <li><a href="#eventos" class="nav-link">Eventos</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
@@ -226,10 +237,10 @@
   </header>
 
   <main id="main">
-    <section class="hero" style="background-image:url('assets/images/fdf-hero.webp')" role="region" aria-labelledby="h1-hero">
+  	<section class="hero" style="background-image:url('assets/images/fdf-hero-1.png')" role="region" aria-labelledby="h1-hero">
       <div class="hero-content" data-animate>
-        <h1 id="h1-hero" class="hero-title">FUGA DE FLAMENCOS</h1>
-        <p class="hero-subtitle">PRODUCCIÓN, REPRESENTACIÓN Y ESCUELA DE FLAMENCO EN SESEÑA 💃🎶</p>
+        <h1 id="h1-hero" class="titulo-estilo">FUGA DE FLAMENCOS</h1>
+        <p class="hero-subtitle">PRODUCCIÓN, REPRESENTACIÓN Y ESCUELA DE FLAMENCO</p>
         <a href="#contacto" class="btn btn-primary">Únete a nuestra familia flamenca</a>
       </div>
       <hr class="divider" aria-hidden="true" />
@@ -238,10 +249,10 @@
     <section id="quienes-somos" class="section" role="region" aria-labelledby="h2-quienes">
       <div class="container split">
         <div class="section-image-box media" data-animate>
-          <img src="https://i.imgur.com/H6z1P7k.jpg" alt="Público disfrutando de un evento flamenco en Seseña" loading="lazy" decoding="async" width="800" height="540">
+          <img src="assets/images/fdf-stage-logo-final.webp" alt="Público disfrutando de un evento flamenco en Seseña" loading="lazy" decoding="async" width="800" height="540">
         </div>
         <div class="section-text-box" data-animate>
-          <h2 id="h2-quienes" class="section-title">Producción musical, representación de artistas y organización de eventos en Seseña</h2>
+          <h2 id="h2-quienes" class="section-title">Producción musical, representación de artistas y organización de eventos</h2>
           <p>Somos una productora y agencia de mánagers especializada en flamenco. Ofrecemos producción musical, representación de artistas y organización de eventos. Nuestra misión es impulsar el talento flamenco y llevarlo a nuevas audiencias.</p>
         </div>
       </div>
@@ -256,21 +267,21 @@
 
     <section id="produccion" class="section" role="region" aria-labelledby="h2-produccion">
       <div class="container">
-        <h2 id="h2-produccion" class="section-title" data-animate>Nuestros servicios</h2>
+        <h2 id="h2-produccion" class="section-title" data-animate>¿Qué ofrecemos?</h2>
         <p class="sr-only" id="desc-produccion">Producción musical, organización de eventos y representación de artistas de flamenco.</p>
         <div class="grid-3" aria-describedby="desc-produccion">
           <article class="card" data-animate>
-            <img src="https://i.imgur.com/4J7X9uA.png" alt="Icono de producción musical" loading="lazy" decoding="async" width="80" height="80">
+            <img src="assets/images/fdf-action-1.webp" alt="Icono de producción musical" loading="lazy" decoding="async" width="300" height="300">
             <h3>Producción Musical</h3>
             <p>Grabación, mezcla y masterización. Dirección artística y arreglos especializados en flamenco.</p>
           </article>
           <article class="card" id="servicio-eventos" data-animate>
-            <img src="https://i.imgur.com/D4s2k2P.png" alt="Icono de organización de eventos" loading="lazy" decoding="async" width="80" height="80">
+            <img src="assets/images/fdf-action-2.webp" alt="Icono de organización de eventos" loading="lazy" decoding="async" width="300" height="300">
             <h3>Organización de Eventos</h3>
             <p>Diseño y producción de experiencias: tablaos, conciertos y festivales.</p>
           </article>
           <article class="card" id="representacion" data-animate>
-            <img src="https://i.imgur.com/K8H9P7R.png" alt="Icono de representación de artistas" loading="lazy" decoding="async" width="80" height="80">
+            <img src="assets/images/fdf-action-3.webp" alt="Icono de representación de artistas" loading="lazy" decoding="async" width="300" height="300">
             <h3>Representación de Artistas</h3>
             <p>Gestión de carrera, booking y comunicación para impulsar tu proyección.</p>
           </article>
