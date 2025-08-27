@@ -107,15 +107,16 @@
     .hero-content { position: relative; z-index: 1; padding: 0 1rem; }
     .hero-title { font-size: clamp(2.2rem, 3vw, 4rem); margin: 0 0 10px; }
     .hero-subtitle { font-size: clamp(1.1rem, 1.5vw, 1.5rem); margin: 0 0 28px; }
-    .titulo-estilo {
-		font-family: 'Monoton', cursive;
-		font-size: 5rem;
-		background: linear-gradient(90deg, #ff1ead, #8e7bf1, #00f0ff);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-    }
+	.titulo-estilo {
+	    font-family: 'Monoton', cursive;
+	    /* Usamos clamp para un tamaño de fuente fluido y responsive */
+	    font-size: clamp(2.8rem, 12vw, 5rem); 
+	    background: linear-gradient(90deg, #ff1ead, #8e7bf1, #00f0ff);
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+	    text-transform: uppercase;
+	    letter-spacing: 2px;
+	}
         
     /* Secciones de contenido */
     .section-text-box, .section-image-box { display: flex; flex-direction: column; justify-content: center; }
@@ -243,8 +244,9 @@
         <p class="hero-subtitle">PRODUCCIÓN, REPRESENTACIÓN Y ESCUELA DE FLAMENCO</p>
         <a href="#contacto" class="btn btn-primary">Únete a nuestra familia flamenca</a>
       </div>
-      <hr class="divider" aria-hidden="true" />
     </section>
+    
+    <hr class="divider" aria-hidden="true" />
 
     <section id="quienes-somos" class="section" role="region" aria-labelledby="h2-quienes">
       <div class="container split">
@@ -254,16 +256,18 @@
         <div class="section-text-box" data-animate>
           <h2 id="h2-quienes" class="section-title">Producción musical, representación de artistas y organización de eventos</h2>
           <p>Somos una productora y agencia de mánagers especializada en flamenco. Ofrecemos producción musical, representación de artistas y organización de eventos. Nuestra misión es impulsar el talento flamenco y llevarlo a nuevas audiencias.</p>
+          <p>Nuestra misión va más allá de la gestión; buscamos ser un motor para el crecimiento y la difusión del flamenco. Trabajamos incansablemente para impulsar el talento de artistas emergentes y consolidados, conectándolos con nuevas audiencias en todo el mundo. Cada proyecto que emprendemos está impregnado de nuestro compromiso por la riqueza del flamenco en la escena global.
+          <p>Si buscas profesionalidad, conocimiento y pasión por el trabajo, has encontrado a tu aliado perfecto para llevar tu proyecto al más alto nivel.</p>
         </div>
       </div>
     </section>
-
-    <hr class="divider" aria-hidden="true" />
 
     <div class="wide-cta" role="region" aria-label="Llamada a la acción para proyectos">
       <p>¿Tienes un proyecto en mente? Cuéntanos tu idea y te proponemos un plan de producción a medida.</p>
       <a class="btn btn-primary-inverse" href="#contacto">Quiero producir</a>
     </div>
+    
+    <hr class="divider" aria-hidden="true" />
 
     <section id="produccion" class="section" role="region" aria-labelledby="h2-produccion">
       <div class="container">
@@ -289,12 +293,12 @@
       </div>
     </section>
 
-    <hr class="divider" aria-hidden="true" />
-
     <div class="wide-cta" role="region" aria-label="Llamada a la acción para eventos">
       <p>¿Organizas un evento? Te proponemos un cartel y plan técnico a tu medida.</p>
       <a class="btn btn-primary-inverse" href="#contacto">Solicitar propuesta</a>
     </div>
+    
+    <hr class="divider" aria-hidden="true" />
 
     <section id="artistas" class="section" role="region" aria-labelledby="h2-artistas">
       <div class="container">
@@ -323,7 +327,9 @@
         </div>
       </div>
     </section>
-
+	
+	<hr class="divider" aria-hidden="true" />
+	
     <section id="formacion" class="section-dark" role="region" aria-labelledby="h2-formacion">
       <div class="container split">
         <div class="section-image-box media" data-animate>
@@ -331,20 +337,27 @@
         </div>
         <div class="section-text-box" data-animate>
           <h2 id="h2-formacion" class="section-title-dark">Formación y Clases de Flamenco</h2>
-          <p>En nuestra escuela impartimos clases de baile, guitarra y cajón. Ayudamos a los nuevos talentos a crecer y brillar.</p>
+          <p>En el corazón de Seseña, nuestra escuela de flamenco es un espacio vivo donde la pasión se transmite en cada lección. Más que una academia, somos un punto de encuentro para aficionados y futuros profesionales a los que ofrecemos una formación integral diseñada para todos los niveles, desde quienes dan sus primeros pasos hasta artistas que buscan perfeccionar su técnica, ayudando a los nuevos talentos a crecer y brillar.</p>
+
+          <p>Sumérgete en nuestras clases de <strong>baile</strong> y aprende a canalizar la fuerza y el duende a través de la técnica del zapateado, el braceo y la expresión corporal. Si prefieres la música, nuestros cursos de <strong>guitarra flamenca</strong> te enseñarán a dominar el compás, las falsetas y el arte del acompañamiento, mientras que con el <strong>cajón</strong> te convertirás en el corazón rítmico que sostiene el cante y el baile. Cada disciplina es impartida por artistas profesionales con una profunda vocación por la enseñanza.</p>
+          
+          <p>Fomentamos un ambiente de aprendizaje cercano y familiar, donde cada alumno puede encontrar su propia voz y desarrollar su potencial en un entorno de apoyo mutuo. Creemos que el flamenco es una experiencia compartida que va más allá de la técnica. Te invitamos a formar parte de nuestra comunidad y a vivir el arte desde dentro.</p>
+
           <ul class="class-list">
-            <li>💃 Baile Flamenco</li>
-            <li>🎸 Guitarra Flamenca</li>
-            <li>🥁 Cajón Flamenco</li>
+            <li>Baile Flamenco (Todos los niveles)</li>
+            <li>Guitarra Flamenca (Acompañamiento y solista)</li>
+            <li>Cajón Flamenco (Iniciación y avanzado)</li>
           </ul>
           <a href="tel:+346672365000" class="btn btn-secondary" style="margin-top:20px">¡Infórmate sin compromiso!</a>
         </div>
       </div>
     </section>
-
+    
+    <hr class="divider" aria-hidden="true" />
+    
     <section id="eventos" class="section-dark" role="region" aria-labelledby="h2-eventos">
       <div class="container">
-        <h2 id="h2-eventos" class="section-title-dark" data-animate>Celebración de Eventos</h2>
+        <h2 id="h2-eventos" class="section-title-dark" data-animate>Próximos Eventos</h2>
         <div class="timeline">
           <div class="event" data-animate>
             <h4>Festival Noche en Rojo</h4>
@@ -364,6 +377,7 @@
         </div>
       </div>
     </section>
+    
   </main>
 
   <footer class="footer" id="contacto" role="contentinfo">
