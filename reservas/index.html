@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservas | Fuga de Flamencos</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#FF3DCD" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&family=Monoton&display=swap" rel="stylesheet">
+  <script async defer src="https://use.fontawesome.com/releases/v6.7.2/js/all.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* =========================================
+       ESTILOS BASE (Mismos que index.html)
+       ========================================= */
+    :root {
+      --primary: #FF3DCD;
+      --bg-body: #050505;
+      --bg-card: #121212;
+      --text-main: #ffffff;
+      --text-muted: #cccccc;
+      --container: 1200px;
+      --radius: 8px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    
+    body { 
+      margin: 0; font-family: 'Montserrat', sans-serif; 
+      background-color: var(--bg-body); color: var(--text-main); line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; padding: 0; margin: 0; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Layout */
+    .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(5, 5, 5, 0.95);
+      border-bottom: 1px solid rgba(255, 61, 205, 0.2);
+      padding: 15px 0;
+    }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Monoton'; font-size: 1.5rem; color: #fff; }
+
+    .text-highlight { color: var(--primary); }
+    
+    .section-title {
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      margin-bottom: 2rem;
+    }
+
+    /* =========================================
+       TARJETAS DE SELECCIÓN
+       ========================================= */
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid #333;
+      padding: 30px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .service-card.active {
+      background: #1a0014;
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(255, 61, 205, 0.2);
+    }
+    .service-card.active::after {
+      content: '\f00c'; /* Check icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute; top: 20px; right: 20px;
+      color: var(--primary); font-size: 1.5rem;
+    }
+
+    .card-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; }
+    .card-price { font-size: 1.1rem; color: var(--primary); font-weight: bold; margin-bottom: 15px; }
+
+    /* =========================================
+       CONTENEDOR DEL CALENDARIO
+       ========================================= */
+    .calendar-wrapper {
+      background: #fff; /* Cal.com suele ser blanco/claro, mejor contenedor limpio */
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 600px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+    
+    .loading-placeholder {
+      display: flex; align-items: center; justify-content: center;
+      height: 600px; color: #333; flex-direction: column;
+      background: #111; color: #fff;
+    }
+
+    /* Footer y Botones */
+    .footer { background: #000; padding: 40px 0; border-top: 1px solid #222; text-align: center; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #000;
+      padding: 15px 30px; font-weight: 800; text-transform: uppercase;
+      margin-top: 20px; border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav-bar">
+      <a href="index.html" class="logo">
+        FUGA<span style="color:var(--primary)">DE</span>FLAMENCOS
+      </a>
+      <a href="index.html" style="text-transform: uppercase; font-size: 0.9rem; font-weight: 600;">
+        &larr; Volver
+      </a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      
+      <h1 class="section-title">RESERVA TU <span class="text-highlight">ESPACIO</span></h1>
+      <p style="font-size: 1.1rem; max-width: 800px; margin-bottom: 50px;">
+        Selecciona el servicio que deseas reservar para ver la disponibilidad en tiempo real.
+        El pago se realiza en el local.
+      </p>
+
+      <div class="selection-grid">
+        <div class="service-card" onclick="loadCalendar('ensayo')">
+          <i class="fas fa-music text-highlight" style="font-size: 2rem; margin-bottom:15px;"></i>
+          <div class="card-title">Sala de Ensayo</div>
+          <div class="card-price">Desde 15€/hora</div>
+          <p style="font-size: 0.9rem; margin:0;">Acústica perfecta, espejos y suelo de danza.</p>
+        </div>
+
+        <div class="service-card" onclick="loadCalendar('estudio')">
+          <i class="fas fa-microphone-lines text-highlight" style="font-size: 2rem; margin-bottom:15px;"></i>
+          <div class="card-title">Estudio Grabación</div>
+          <div class="card-price">Consultar Packs</div>
+          <p style="font-size: 0.9rem; margin:0;">Producción completa, mezcla y mastering.</p>
+        </div>
+
+        <div class="service-card" onclick="loadCalendar('eventos')">
+          <i class="fas fa-champagne-glasses text-highlight" style="font-size: 2rem; margin-bottom:15px;"></i>
+          <div class="card-title">Sala de Eventos</div>
+          <div class="card-price">Presupuesto a medida</div>
+          <p style="font-size: 0.9rem; margin:0;">Fiestas privadas, cumpleaños y rodajes.</p>
+        </div>
+      </div>
+
+      <div id="calendar-container" class="calendar-wrapper">
+        <div class="loading-placeholder">
+          <i class="fas fa-calendar-alt" style="font-size: 3rem; margin-bottom: 20px; color: var(--primary);"></i>
+          <h3>Selecciona una sala arriba para ver disponibilidad</h3>
+          <p style="color: #888;">Usamos Cal.com para gestionar tu cita de forma segura.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px; border-top: 1px solid #222; padding-top: 40px;">
+        <h3 style="color: #fff;">¿Prefieres hablar con nosotros?</h3>
+        <p>Si tienes dudas especiales o necesitas un horario fuera de calendario.</p>
+        <a href="https://wa.me/34667236500" class="btn-wa">
+          <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Reservar por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Fuga de Flamencos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function loadCalendar(type) {
+      const container = document.getElementById('calendar-container');
+      const cards = document.querySelectorAll('.service-card');
+      
+      // Reset active styles
+      cards.forEach(c => c.classList.remove('active'));
+      // Add active style to clicked (logic simplified for demo)
+      event.currentTarget.classList.add('active');
+
+      // ⚠️ AQUÍ DEBES PONER TUS LINKS DE CAL.COM REALES ⚠️
+      // Regístrate en Cal.com y crea 3 tipos de eventos.
+      // Copia el "Link" de cada uno y pégalos abajo:
+      
+      let calLink = '';
+      
+      if(type === 'ensayo') {
+        // Ejemplo: cal.com/tu-usuario/ensayo
+        calLink = 'https://cal.com/tu-usuario/sala-ensayo'; 
+      } else if (type === 'estudio') {
+        calLink = 'https://cal.com/tu-usuario/estudio-grabacion';
+      } else if (type === 'eventos') {
+        calLink = 'https://cal.com/tu-usuario/sala-eventos';
+      }
+
+      // Inyectar el iframe
+      container.innerHTML = `
+        <iframe 
+          src="${calLink}?theme=dark" 
+          width="100%" 
+          height="700" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>`;
+    }
+  </script>
+</body>
+</html>

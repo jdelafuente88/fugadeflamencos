@@ -2,198 +2,321 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fuga de Flamencos | Productora y Escuela de Flamenco en Seseña</title>
-  <meta name="description" content="Productora musical y agencia de mánagers especializada en flamenco en Seseña. Representación de artistas, organización de eventos y escuela con clases de baile, guitarra y cajón." />
-  <meta name="theme-color" content="#ff69b4" />
-  <link rel="canonical" href="https://fugadeflamencos.com/" />
-  <meta property="og:site_name" content="Fuga de Flamencos" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_ES" />
-  <meta property="og:title" content="Fuga de Flamencos | Productora y Escuela de Flamenco en Seseña" />
-  <meta property="og:description" content="Productora musical y agencia de mánagers especializada en flamenco en Seseña. Representación de artistas, eventos y escuela (baile, guitarra y cajón)." />
-  <meta property="og:url" content="https://fugadeflamencos.com/" />
-  <meta property="og:image" content="https://i.imgur.com/2sA2Q5m.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fuga de Flamencos | Productora y Escuela de Flamenco en Seseña" />
-  <meta name="twitter:description" content="Productora musical, representación de artistas, eventos y escuela de flamenco en Seseña." />
-  <meta name="twitter:image" content="https://i.imgur.com/2sA2Q5m.jpg" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuga de Flamencos | Escuela, Estudio y Eventos</title>
+  <meta name="description" content="Fuga de Flamencos en Seseña: Escuela de música y danza, estudio de grabación y alquiler de salas para eventos. A 20 min de Madrid." />
+  <meta name="theme-color" content="#FF3DCD" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://use.fontawesome.com">
-  <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Monoton&display=swap" rel="stylesheet">
   <script async defer src="https://use.fontawesome.com/releases/v6.7.2/js/all.js" crossorigin="anonymous"></script>
 
-  <link rel="preload" as="image" href="https://i.imgur.com/2sA2Q5m.jpg" />
-
   <style>
-	:root{
-	  /* Paleta FUGA DE FLAMENCOS (imagen) */
-	  --primary-color: #FF3DCD;      /* Magenta neón (brand) */
-	  --accent-color:  #B100A4;      /* Magenta oscuro (hover/bordes) */
-	  --secondary-color: #E8E3F3;    /* Texto sobre fondos oscuros */
-	  --background-color: #0A0712;   /* Negro violeta de base */
-	  --surface: #151026;            /* Paneles/tarjetas sobre fondo */
-	  --text-color: #E8E3F3;         /* Alias si lo necesitas */
-	  --radius-lg:16px;
-	  --radius-md:12px;
-	  --shadow: 0 8px 24px rgba(255,61,205,.12);
-	  --container:1200px;
-	
-	  /* Divisores/acentos con brillo */
-	  --divider-fg: rgba(255,61,205,.45);
-	  --divider-bg: rgba(255,61,205,.10);
-	
-	  --transition:.25s ease;
-	}
-	
-    /* Reset básico y estilos generales */
+    /* =========================================
+       VARIABLES & RESET
+       ========================================= */
+    :root {
+      /* Paleta Neon/Dark */
+      --primary: #FF3DCD;
+      --primary-dark: #b00085;
+      --bg-body: #050505;
+      --bg-card: #121212;
+      --bg-highlight: #1E1E1E;
+      --text-main: #ffffff;
+      --text-muted: #cccccc;
+      
+      --container: 1200px;
+      --radius: 8px;
+      --shadow: 0 10px 30px rgba(255, 61, 205, 0.1);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
     *, *::before, *::after { box-sizing: border-box; }
+    
     html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--secondary-color); background: var(--background-color); overflow-x: hidden; }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; }
+    
+    body { 
+      margin: 0; 
+      font-family: 'Montserrat', sans-serif; 
+      background-color: var(--bg-body); 
+      color: var(--text-main); 
+      line-height: 1.6;
+      overflow-x: hidden; /* Evita scroll horizontal indeseado */
+    }
 
-    /* Accesibilidad */
-    .sr-only { position: absolute; left: -999px; top: auto; overflow: hidden; }
-    .skip-link { position: absolute; left: -999px; top: auto; overflow: hidden; }
-    .skip-link:focus { left: 1rem; top: 1rem; background: #000; color: #fff; padding: .5rem .75rem; border-radius: 8px; z-index: 1200; }
+    img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; padding: 0; margin: 0; }
 
-    /* Utilidad scroll lock */
-    .menu-open { overflow: hidden; }
+    /* =========================================
+       TIPOGRAFÍA FLUIDA
+       ========================================= */
+    h1, h2, h3, h4 { margin-top: 0; line-height: 1.2; }
+    
+    /* El título usa clamp() para escalar suavemente entre 2.5rem y 5rem */
+    h1 { 
+      font-family: 'Monoton', cursive; 
+      font-weight: 400; 
+      font-size: clamp(2.5rem, 8vw, 6rem); 
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    h2 { 
+      font-family: 'Montserrat', sans-serif; 
+      font-weight: 800; 
+      font-size: clamp(1.8rem, 4vw, 2.5rem); 
+      text-transform: uppercase; 
+    }
+    
+    h3 { font-size: 1.3rem; font-weight: 700; }
+    p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1rem; }
 
-    /* Layout */
-    .container { max-width: var(--container); margin-inline: auto; padding-inline: 20px; }
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--secondary-color); }
+    .text-highlight { color: var(--primary); }
+    
+    .section-title {
+      border-left: 5px solid var(--primary);
+      padding-left: 15px;
+      margin-bottom: 2rem;
+    }
+
+    /* =========================================
+       COMPONENTES UI
+       ========================================= */
+    .container { 
+      width: 100%; 
+      max-width: var(--container); 
+      margin: 0 auto; 
+      padding: 0 20px; 
+    }
+
     .section { padding: 80px 0; }
-    .section-dark { padding: 80px 0; background: #000; color: #fff; }
-    .section-title { color: var(--primary-color); margin: 0 0 12px; }
-    .section-title-dark { color: #fff; margin: 0 0 12px; }
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .media { border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 36px; }
-    .class-list { list-style: none; padding: 0; margin: 12px 0 0 0; }
 
-    /* Separadores visuales */
-    .divider { height: 14px; border: 0; background: linear-gradient(90deg, var(--divider-fg), var(--divider-bg) 22%, var(--divider-bg) 78%, var(--accent-color, var(--primary-color)) 18%); opacity: .9; }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: var(--primary);
+      color: #fff;
+      border: 2px solid var(--primary);
+      clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+      transition: var(--transition);
+      text-align: center;
+    }
+    .btn:hover {
+      background: transparent;
+      transform: translateY(-3px);
+      clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+    }
 
-    /* Botones */
-    .btn { display: inline-block; padding: 14px 26px; border-radius: 999px; font-weight: 700; text-decoration: none; transition: transform var(--transition), background-color var(--transition), color var(--transition); }
-    .btn-primary { background: var(--primary-color); color: #fff; }
-    .btn-primary:hover { background: var(--accent-color); transform: translateY(-3px); }
-    .btn-secondary { background: #fff; color: var(--primary-color); border: 2px solid var(--primary-color); }
-    .btn-secondary:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
-    .btn-primary-inverse { background: #fff; color: var(--primary-color); border: 2px solid #fff; }
-    .btn-primary-inverse:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
+    /* Grids Responsive */
+    .grid-2 { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 50px; 
+      align-items: center; 
+    }
+    
+    .grid-3 { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 30px; 
+    }
 
-    /* Header y navegación */
-    .header { position: sticky; top: 0; z-index: 1000; background: var(--background-color); box-shadow: 0 2px 5px rgba(0,0,0,.08); }
-    .header .bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .nav-list { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; }
-    .nav-link { display: inline-block; text-decoration: none; color: var(--secondary-color); padding: 10px 14px; border-radius: 999px; }
-    .nav-link:focus-visible, .nav-link:hover { color: var(--primary-color); background: rgba(255,105,180,.08); outline: none; }
-    .nav-toggle { display: none; }
-    .nav-close { display: none; }
+    /* =========================================
+       HEADER & NAV
+       ========================================= */
+    .header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(5, 5, 5, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 61, 205, 0.2);
+      padding: 15px 0;
+    }
+    
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { 
+      font-family: 'Monoton'; 
+      font-size: 1.5rem; 
+      color: #fff; 
+      z-index: 1001; /* Sobre el menú móvil */
+    }
 
-    .nav-toggle:focus-visible, .nav-close:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; }
+    .nav-list { display: flex; gap: 30px; }
+    
+    .nav-link { 
+      font-size: 0.9rem; 
+      font-weight: 600; 
+      text-transform: uppercase; 
+      position: relative;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+      background: var(--primary); transition: var(--transition);
+    }
+    .nav-link:hover::after { width: 100%; }
 
+    .nav-toggle { 
+      display: none; 
+      background: none; 
+      border: none; 
+      color: #fff; 
+      font-size: 1.8rem; 
+      cursor: pointer; 
+      z-index: 1001; 
+    }
+
+    /* =========================================
+       SECCIONES ESPECÍFICAS
+       ========================================= */
+    
     /* Hero */
-    .hero { position: relative; min-height: 80vh; display: grid; place-items: center; text-align: center; color: #fff; background: no-repeat center/cover; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.55)); }
-    .hero-content { position: relative; z-index: 1; padding: 0 1rem; }
-    .hero-title { font-size: clamp(2.2rem, 3vw, 4rem); margin: 0 0 10px; }
-    .hero-subtitle { font-size: clamp(1.1rem, 1.5vw, 1.5rem); margin: 0 0 28px; }
-	.titulo-estilo {
-	    font-family: 'Monoton', cursive;
-	    /* Usamos clamp para un tamaño de fuente fluido y responsive */
-	    font-size: clamp(2.8rem, 12vw, 5rem); 
-	    background: linear-gradient(90deg, #ff1ead, #8e7bf1, #00f0ff);
-	    -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-	    text-transform: uppercase;
-	    letter-spacing: 2px;
-	}
-        
-    /* Secciones de contenido */
-    .section-text-box, .section-image-box { display: flex; flex-direction: column; justify-content: center; }
-    .card { background: var(--surface); border-radius: var(--radius-md); padding: 26px; text-align: center; box-shadow: var(--shadow); transition: transform var(--transition); }
-    .card:hover { transform: translateY(-6px); }
-    .card img { margin-inline: auto; margin-bottom: 20px; }
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      background: url('assets/images/fdf-hero-1.png') center/cover no-repeat;
+      background-attachment: fixed; /* Parallax en desktop */
+      padding: 0 20px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.95) 100%);
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+    
+    /* Tarjetas (Cards) */
+    .card {
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid #222;
+      transition: var(--transition);
+      display: flex; flex-direction: column;
+      height: 100%;
+    }
+    .card:hover { 
+      transform: translateY(-5px); 
+      border-color: var(--primary); 
+      box-shadow: var(--shadow);
+    }
+    .card-icon { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
 
-    /* Artistas */
-    #artistas .container { display: block; }
-    .artist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 36px; }
-    .artist-card { background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow); padding: 26px; text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
-    .artist-card:hover { transform: translateY(-8px); box-shadow: 0 12px 26px rgba(0,0,0,.18); }
-    .artist-card img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); margin: 0 auto 14px; }
-    .artist-card h4 { font-family: 'Playfair Display', serif; font-size: 1.35rem; margin: 0 0 8px; }
-    .artist-card p { font-size: .95rem; color: #666; margin: 0; }
+    /* Lista de características */
+    .feature-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+    .feature-list li::before {
+      content: '>'; 
+      position: absolute; left: 0; 
+      color: var(--primary); font-weight: 800;
+    }
 
-    /* Timeline (Eventos) */
-    .timeline { position: relative; margin-top: 32px; }
-    .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,.25); }
-    .event { position: relative; padding-left: 34px; margin: 18px 0; }
-    .event::before { content: ""; position: absolute; left: 4px; top: .3rem; width: 14px; height: 14px; border-radius: 50%; background: var(--primary-color); box-shadow: 0 0 0 3px rgba(255,105,180,.25); }
-    .event h4 { margin: 0 0 4px; }
-    .event .meta { opacity: .85; margin-bottom: 6px; }
+    /* Caja USP (Parking) */
+    .usp-box {
+      background: var(--primary);
+      color: #000;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+      clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
+    }
 
-    /* CTAs */
-    .wide-cta { background: #000; color: #fff; text-align: center; padding: 60px 20px; }
-    .wide-cta p { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 24px; }
+    /* Grid de Fotos */
+    .spaces-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .space-item {
+      position: relative;
+      height: 200px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .space-item img { width: 100%; height: 100%; transition: transform 0.5s; }
+    .space-item:hover img { transform: scale(1.1); }
+    .space-label {
+      position: absolute; bottom: 0; width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
 
     /* Footer */
-    .footer { background:#151026; color:#fff; padding: 50px 0 20px; }
-    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; text-align: left; }
-    .footer-section h3 { margin: 0 0 16px; color: var(--primary-color); }
-    .footer-section a { text-decoration: none; color: #fff; transition: color var(--transition); }
-    .footer-section a:hover { color: var(--primary-color); }
-    .social-links { display: flex; gap: 18px; margin-top: 10px; }
-    .social-links img { height: 30px; filter: invert(1); }
-    .footer-bottom { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); text-align: center; }
+    .footer { background: #000; padding: 60px 0 30px; border-top: 1px solid #222; }
+    .footer-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 40px; 
+    }
+    .social-icons a { margin-right: 15px; font-size: 1.4rem; }
+    .social-icons a:hover { color: var(--primary); }
 
-    /* Animaciones */
-    [data-animate] { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
-    [data-animate].visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      [data-animate] { opacity: 1; transform: none; }
-      .btn, .card, .artist-card { transition: none; }
+    /* =========================================
+       MEDIA QUERIES (RESPONSIVE)
+       ========================================= */
+
+    /* Tablet (max-width: 1024px) */
+    @media (max-width: 1024px) {
+      .section { padding: 60px 0; }
+      .container { padding: 0 30px; }
+      .hero { background-attachment: scroll; /* Mejor rendimiento en tablets */ }
     }
 
-    /* Media Queries (Responsive) */
-    @media (max-width: 900px) {
-      .split, .grid-3, .footer-grid { grid-template-columns: 1fr; text-align: center; }
-      .section-text-box, .section-image-box { text-align: center; }
-      .section-image-box { order: -1; }
-      .card img { margin-bottom: 0; }
-      .footer-grid { text-align: center; }
-      .social-links { justify-content: center; }
+    /* Móvil (max-width: 768px) */
+    @media (max-width: 768px) {
+      /* Navegación */
+      .nav-toggle { display: block; }
+      .nav-list {
+        position: fixed;
+        top: 0; right: 0;
+        width: 100%; height: 100vh;
+        background: #000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: 1000;
+      }
+      .nav-list.active { transform: translateX(0); }
+      .nav-link { font-size: 1.5rem; }
+
+      /* Layout */
+      .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+      .usp-box { clip-path: none; border-radius: var(--radius); }
+      
+      /* Espacios: hacer las imágenes más altas en móvil */
+      .space-item { height: 250px; } 
     }
 
-    /* ===== Navegación móvil mejorada ===== */
-    @media (max-width: 860px) {
-      h2 { font-size: 1.8rem; word-break: break-word; hyphens: auto; }
-      .nav-toggle { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid #ddd; background: #fff; padding: .5rem .65rem; border-radius: 10px; }
-      .nav-toggle:hover { cursor: pointer; }
-
-      /* El contenedor <nav> actúa como backdrop clicable */
-      .nav { position: fixed; inset: 0; z-index: 1100; display: flex; transform: translateX(100%); opacity: 0; pointer-events: none; transition: transform .3s ease-in-out, opacity .2s ease-in-out; }
-      .nav.is-open { transform: translateX(0); opacity: 1; pointer-events: auto; }
-
-      /* Panel deslizante */
-      .nav-list { flex-direction: column; justify-content: center; align-items: center; gap: 20px; background: var(--background-color); position: absolute; top: 0; right: 0; height: 100%; width: 75%; padding: 40px; box-shadow: -8px 0 30px rgba(0,0,0,.15); }
-      .nav-link { font-size: 1.25rem; width: 100%; text-align: center; border-radius: 8px; }
-
-      /* Botón cerrar */
-      .nav-close { display: block; position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 2rem; color: var(--secondary-color); cursor: pointer; }
+    /* Móvil Pequeño (max-width: 480px) */
+    @media (max-width: 480px) {
+      .hero-title { font-size: 14vw; } /* Ajuste agresivo para Monoton */
+      .btn { width: 100%; clip-path: none; border-radius: 4px; }
+      .spaces-grid { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+      .section-title { font-size: 1.8rem; }
+      
+      /* Forzar orden visual en secciones alternas si fuera necesario */
+      .grid-2 > div:nth-child(2) { margin-top: 20px; }
     }
-        
   </style>
-
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -215,21 +338,22 @@
   </script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Saltar al contenido</a>
 
-  <header class="header" id="top">
-    <div class="container bar">
-      <a class="logo" href="#top" aria-label="Fuga de Flamencos">
-        <img src="assets/images/fdf-header-logo.webp" alt="Logo de Fuga de Flamencos" loading="eager" decoding="sync" width="293" height="64">
+  <header class="header">
+    <div class="container nav-bar">
+      <a href="#" class="logo">
+        FUGA<span style="color:var(--primary)">DE</span>FLAMENCOS
       </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav">☰ Menú</button>
-      <nav id="siteNav" class="nav" aria-label="Navegación principal" aria-hidden="true">
-        <button class="nav-close" aria-label="Cerrar menú">×</button>
-        <ul class="nav-list">
-          <li><a href="#quienes-somos" class="nav-link">¿Quiénes somos?</a></li>
-          <li><a href="#produccion" class="nav-link">¿Qué ofrecemos?</a></li>
-          <li><a href="#artistas" class="nav-link">Artistas</a></li>
-          <li><a href="#formacion" class="nav-link">Escuela</a></li>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul class="nav-list" id="navList">
+          <li><a href="#escuela" class="nav-link">Escuela</a></li>
+          <li><a href="#estudio" class="nav-link">Estudio</a></li>
+          <li><a href="#espacios" class="nav-link">Espacios</a></li>
           <li><a href="#eventos" class="nav-link">Eventos</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
@@ -237,227 +361,213 @@
     </div>
   </header>
 
-  <main id="main">
-  	<section class="hero" style="background-image:url('assets/images/fdf-hero-1.png')" role="region" aria-labelledby="h1-hero">
-      <div class="hero-content" data-animate>
-        <h1 id="h1-hero" class="titulo-estilo">FUGA DE FLAMENCOS</h1>
-        <p class="hero-subtitle">PRODUCCIÓN, REPRESENTACIÓN Y ESCUELA DE FLAMENCO</p>
-        <a href="#contacto" class="btn btn-primary">Únete a nuestra familia flamenca</a>
-      </div>
-    </section>
-    
-    <hr class="divider" aria-hidden="true" />
-
-    <section id="quienes-somos" class="section" role="region" aria-labelledby="h2-quienes">
-      <div class="container split">
-        <div class="section-image-box media" data-animate>
-          <img src="assets/images/fdf-stage-logo-final.webp" alt="Público disfrutando de un evento flamenco en Seseña" loading="lazy" decoding="async" width="800" height="540">
-        </div>
-        <div class="section-text-box" data-animate>
-          <h2 id="h2-quienes" class="section-title">Producción musical, representación de artistas y organización de eventos</h2>
-          <p>Somos una productora y agencia de mánagers especializada en flamenco. Ofrecemos producción musical, representación de artistas y organización de eventos. Nuestra misión es impulsar el talento flamenco y llevarlo a nuevas audiencias.</p>
-          <p>Nuestra misión va más allá de la gestión; buscamos ser un motor para el crecimiento y la difusión del flamenco. Trabajamos incansablemente para impulsar el talento de artistas emergentes y consolidados, conectándolos con nuevas audiencias en todo el mundo. Cada proyecto que emprendemos está impregnado de nuestro compromiso por la riqueza del flamenco en la escena global.
-          <p>Si buscas profesionalidad, conocimiento y pasión por el trabajo, has encontrado a tu aliado perfecto para llevar tu proyecto al más alto nivel.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="wide-cta" role="region" aria-label="Llamada a la acción para proyectos">
-      <p>¿Tienes un proyecto en mente? Cuéntanos tu idea y te proponemos un plan de producción a medida.</p>
-      <a class="btn btn-primary-inverse" href="#contacto">Quiero producir</a>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Fuga <span style="color:var(--primary)">de</span> Flamencos</h1>
+      <p style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 2rem;">Arte & Música en Seseña</p>
+      <a href="#contacto" class="btn">Reserva tu espacio</a>
     </div>
-    
-    <hr class="divider" aria-hidden="true" />
+  </section>
 
-    <section id="produccion" class="section" role="region" aria-labelledby="h2-produccion">
-      <div class="container">
-        <h2 id="h2-produccion" class="section-title" data-animate>¿Qué ofrecemos?</h2>
-        <p class="sr-only" id="desc-produccion">Producción musical, organización de eventos y representación de artistas de flamenco.</p>
-        <div class="grid-3" aria-describedby="desc-produccion">
-          <article class="card" data-animate>
-            <img src="assets/images/fdf-action-1.webp" alt="Icono de producción musical" loading="lazy" decoding="async" width="300" height="300">
-            <h3>Producción Musical</h3>
-            <p>Grabación, mezcla y masterización. Dirección artística y arreglos especializados en flamenco.</p>
-          </article>
-          <article class="card" id="servicio-eventos" data-animate>
-            <img src="assets/images/fdf-action-2.webp" alt="Icono de organización de eventos" loading="lazy" decoding="async" width="300" height="300">
-            <h3>Organización de Eventos</h3>
-            <p>Diseño y producción de experiencias: tablaos, conciertos y festivales.</p>
-          </article>
-          <article class="card" id="representacion" data-animate>
-            <img src="assets/images/fdf-action-3.webp" alt="Icono de representación de artistas" loading="lazy" decoding="async" width="300" height="300">
-            <h3>Representación de Artistas</h3>
-            <p>Gestión de carrera, booking y comunicación para impulsar tu proyección.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="wide-cta" role="region" aria-label="Llamada a la acción para eventos">
-      <p>¿Organizas un evento? Te proponemos un cartel y plan técnico a tu medida.</p>
-      <a class="btn btn-primary-inverse" href="#contacto">Solicitar propuesta</a>
+  <div class="container">
+    <div class="usp-box">
+      <h3 style="margin-bottom: 5px; font-size: 1.5rem; text-transform: uppercase;">Tu Lugar Ideal</h3>
+      <p style="color: #000; font-weight: 600; margin: 0;">A 20 minutos de Madrid • Sin problemas de aparcamiento</p>
     </div>
-    
-    <hr class="divider" aria-hidden="true" />
+  </div>
 
-    <section id="artistas" class="section" role="region" aria-labelledby="h2-artistas">
-      <div class="container">
-        <h2 id="h2-artistas" class="section-title" data-animate>Nuestros Artistas</h2>
-        <div class="artist-grid">
-          <article class="artist-card" data-animate>
-            <img src="https://i.imgur.com/E8w9k1g.jpg" alt="Retrato de Antonio &quot;El Cantaor&quot;" loading="lazy" decoding="async" width="180" height="180">
-            <h4>Antonio "El Cantaor"</h4>
-            <p>Prodigio del cante jondo. Voz que evoca la esencia pura del flamenco.</p>
-          </article>
-          <article class="artist-card" data-animate>
-            <img src="https://i.imgur.com/G7y4A8R.jpg" alt="Retrato de Lucía &quot;La Gitana&quot;" loading="lazy" decoding="async" width="180" height="180">
-            <h4>Lucía "La Gitana"</h4>
-            <p>Bailaora de corazón: fuerza de la tradición con toques de modernidad.</p>
-          </article>
-          <article class="artist-card" data-animate>
-            <img src="https://i.imgur.com/L9p2U1L.jpg" alt="Retrato de Paco &quot;El Virtuoso&quot;" loading="lazy" decoding="async" width="180" height="180">
-            <h4>Paco "El Virtuoso"</h4>
-            <p>Guitarrista reconocido por técnica impecable y composiciones innovadoras.</p>
-          </article>
-          <article class="artist-card" data-animate>
-            <img src="https://i.imgur.com/P1k2N5Q.jpg" alt="Retrato de Eva &quot;La Faraona&quot;" loading="lazy" decoding="async" width="180" height="180">
-            <h4>Eva "La Faraona"</h4>
-            <p>Baile con duende y pasión. Icono de la nueva generación flamenca.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-	
-	<hr class="divider" aria-hidden="true" />
-	
-    <section id="formacion" class="section-dark" role="region" aria-labelledby="h2-formacion">
-      <div class="container split">
-        <div class="section-image-box media" data-animate>
-          <img src="assets/images/fdf-action-4.webp" alt="Clase de flamenco" loading="lazy" decoding="async" width="800" height="540">
-        </div>
-        <div class="section-text-box" data-animate>
-          <h2 id="h2-formacion" class="section-title-dark">Formación y Clases de Flamenco</h2>
-          <p>En el corazón de Seseña, nuestra escuela de flamenco es un espacio vivo donde la pasión se transmite en cada lección. Más que una academia, somos un punto de encuentro para aficionados y futuros profesionales a los que ofrecemos una formación integral diseñada para todos los niveles, desde quienes dan sus primeros pasos hasta artistas que buscan perfeccionar su técnica, ayudando a los nuevos talentos a crecer y brillar.</p>
-
-          <p>Sumérgete en nuestras clases de <strong>baile</strong> y aprende a canalizar la fuerza y el duende a través de la técnica del zapateado, el braceo y la expresión corporal. Si prefieres la música, nuestros cursos de <strong>guitarra flamenca</strong> te enseñarán a dominar el compás, las falsetas y el arte del acompañamiento, mientras que con el <strong>cajón</strong> te convertirás en el corazón rítmico que sostiene el cante y el baile. Cada disciplina es impartida por artistas profesionales con una profunda vocación por la enseñanza.</p>
-          
-          <p>Fomentamos un ambiente de aprendizaje cercano y familiar, donde cada alumno puede encontrar su propia voz y desarrollar su potencial en un entorno de apoyo mutuo. Creemos que el flamenco es una experiencia compartida que va más allá de la técnica. Te invitamos a formar parte de nuestra comunidad y a vivir el arte desde dentro.</p>
-
-          <ul class="class-list">
-            <li>Baile Flamenco (Todos los niveles)</li>
-            <li>Guitarra Flamenca (Acompañamiento y solista)</li>
-            <li>Cajón Flamenco (Iniciación y avanzado)</li>
-          </ul>
-          <a href="tel:+346672365000" class="btn btn-secondary" style="margin-top:20px">¡Infórmate sin compromiso!</a>
-        </div>
-      </div>
-    </section>
-    
-    <hr class="divider" aria-hidden="true" />
-    
-    <section id="eventos" class="section-dark" role="region" aria-labelledby="h2-eventos">
-      <div class="container">
-        <h2 id="h2-eventos" class="section-title-dark" data-animate>Próximos Eventos</h2>
-        <div class="timeline">
-          <div class="event" data-animate>
-            <h4>Festival Noche en Rojo</h4>
-            <div class="meta">Sevilla · Jul 2025 · 2.000 asistentes</div>
-            <p>Producción integral: booking, rider técnico y comunicación.</p>
-          </div>
-          <div class="event" data-animate>
-            <h4>Gala Benéfica Al Compás</h4>
-            <div class="meta">Seseña · May 2025 · Teatro Principal</div>
-            <p>Coordinación artística y dirección de escena.</p>
-          </div>
-          <div class="event" data-animate>
-            <h4>Tablao Corporativo</h4>
-            <div class="meta">Barcelona · Mar 2025 · Evento privado</div>
-            <p>Formato íntimo con trío de cante, guitarra y baile.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-  </main>
-
-  <footer class="footer" id="contacto" role="contentinfo">
+  <section id="escuela" class="section">
     <div class="container">
-      <div class="footer-grid">
-        <section class="footer-section" aria-labelledby="contacto-heading">
-          <h3 id="contacto-heading">Contacto</h3>
-          <p>Teléfono: <a href="tel:+346672365000">+34 667 236 500</a></p>
-          <p>Email: <a href="mailto:info@fugadeflamencos.com">info@fugadeflamencos.com</a></p>
-          <p>Ubicación: Seseña, Toledo. España</p>
-        </section>
-        <section class="footer-section" aria-labelledby="siguenos-heading">
-          <h3 id="siguenos-heading">Síguenos en redes sociales</h3>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook fa-3x"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram fa-3x"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube fa-3x"></i></a>
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">Escuela <span class="text-highlight">Flamenco</span></h2>
+          <p>Potencia tus cualidades y técnica con artistas experimentados. Un entorno profesional para formarte y hacer realidad tus sueños.</p>
+          
+          <div style="background: var(--bg-highlight); padding: 25px; border-radius: var(--radius); margin-top: 20px;">
+            <h3 class="text-highlight" style="margin-bottom: 15px;">Disciplinas</h3>
+            <ul class="feature-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+              <li>Guitarra</li>
+              <li>Cajón</li>
+              <li>Cante</li>
+              <li>Piano</li>
+			  <li>Saxo</li>
+              <li>Baile Flamenco</li>
+            </ul>
+            
+            <hr style="border:0; border-top:1px solid #444; margin: 20px 0;">
+            
+            <h3 style="font-size: 1rem; margin-bottom: 10px;">Niveles:</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="background:#000; padding:4px 10px; font-size:0.8rem; border:1px solid #333;">Iniciación</span>
+              <span style="background:#000; padding:4px 10px; font-size:0.8rem; border:1px solid #333;">Medio</span>
+              <span style="background:#000; padding:4px 10px; font-size:0.8rem; border:1px solid #333;">Avanzado</span>
+              <span style="background:var(--primary); color:#fff; padding:4px 10px; font-size:0.8rem; font-weight:bold;">Masterclass</span>
+            </div>
           </div>
-        </section>
+        </div>
+        
+        <div>
+           <img src="assets/images/fdf-action-0.webp" alt="Clase de baile flamenco" style="border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #333;">
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p>Fuga de Flamencos &copy; <span id="year"></span>. Todos los derechos reservados.</p>
-        <small>Sitio web creado por <a href="https://instagram.com/jdelafuente88" target="_blank" rel="noopener">@jdelafuente88</a></small>
+    </div>
+  </section>
+
+  <section id="estudio" class="section" style="background: var(--bg-card);">
+    <div class="container">
+      <h2 class="section-title">Estudio & <span class="text-highlight">Servicios</span></h2>
+      <div class="grid-3">
+        <article class="card">
+          <i class="fas fa-microphone-lines card-icon"></i>
+          <h3>Estudio Multimedia</h3>
+          <ul class="feature-list">
+            <li>Grabación de Audio</li>
+            <li>Estudio Fotografía</li>
+            <li>Video Clips</li>
+            <li>Producción Musical</li>
+          </ul>
+        </article>
+        
+        <article class="card">
+          <i class="fas fa-users-viewfinder card-icon"></i>
+          <h3>Músicos y Artistas</h3>
+          <ul class="feature-list">
+            <li>Viento y Cuerdas</li>
+            <li>Percusionistas</li>
+            <li>Intérpretes</li>
+            <li>Fotógrafos</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <i class="fas fa-champagne-glasses card-icon"></i>
+          <h3>Eventos</h3>
+          <ul class="feature-list">
+            <li>Fiestas Temáticas</li>
+            <li>Personalizados</li>
+            <li>Privados</li>
+            <li>Espectáculos</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="espacios" class="section">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">Reserva tu <span class="text-highlight">Espacio</span></h2>
+          <p>Un espacio multifuncional equipado con todo lo necesario. Desde fiestas privadas hasta rodajes.</p>
+          
+          <div style="margin-top: 30px;">
+            <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px;">
+              <li style="display:flex; align-items:center; gap:10px;"><i class="fas fa-video text-highlight"></i> Proyector</li>
+              <li style="display:flex; align-items:center; gap:10px;"><i class="fas fa-layer-group text-highlight"></i> Croma</li>
+              <li style="display:flex; align-items:center; gap:10px;"><i class="fas fa-film text-highlight"></i> Pantalla Cine</li>
+              <li style="display:flex; align-items:center; gap:10px;"><i class="fas fa-music text-highlight"></i> Karaoke</li>
+              <li style="display:flex; align-items:center; gap:10px;"><i class="fas fa-volume-high text-highlight"></i> Sonido</li>
+            </ul>
+          </div>
+          <br>
+          <a href="#contacto" class="btn">Consultar disponibilidad</a>
+        </div>
+        
+        <div class="spaces-grid">
+          <div class="space-item">
+            <img src="assets/images/fdf-action-1.webp" alt="Estudio de Grabación">
+            <div class="space-label">Estudio</div>
+          </div>
+          <div class="space-item">
+            <img src="assets/images/fdf-action-4.webp" alt="Sala de Ensayo">
+            <div class="space-label">Ensayo</div>
+          </div>
+          <div class="space-item">
+             <img src="assets/images/fdf-action-3.webp" alt="Sala de Grabación">
+            <div class="space-label">Grabación</div>
+          </div>
+          <div class="space-item">
+            <img src="assets/images/fdf-stage-logo-final.webp" alt="Sala de Eventos">
+            <div class="space-label">Sala de Eventos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" class="footer">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">Contáctanos</h2>
+      
+      <div class="footer-grid">
+        <div>
+          <h3 class="text-highlight">Ubicación</h3>
+          <p>Calle del Greco 3<br>45223 Seseña, Toledo</p>
+          <p><i class="fas fa-clock"></i> Atención bajo reserva</p>
+        </div>
+        
+        <div>
+          <h3 class="text-highlight">Llámanos</h3>
+          <p><a href="tel:667236500" style="font-size: 1.4rem; font-weight: bold; color: #fff;">667 236 500</a></p>
+          <p><a href="mailto:info@fugadeflamencos.com">info@fugadeflamencos.com</a></p>
+        </div>
+        
+        <div>
+          <h3 class="text-highlight">Síguenos</h3>
+          <div class="social-icons">
+            <a href="https://instagram.com/fugadeflamencos" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p style="margin-top: 15px; font-size: 0.9rem;">@fugadeflamencos</p>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid #222; padding-top: 30px; margin-top: 50px; text-align: center;">
+        <p style="font-size: 0.8rem; color: #666; margin-bottom: 10px;">
+          &copy; <span id="year"></span> Fuga de Flamencos. Todos los derechos reservados.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+          <a href="aviso-legal.html" style="color: #666; font-size: 0.75rem; text-transform: uppercase;">Aviso Legal</a>
+          <a href="#" style="color: #666; font-size: 0.75rem; text-transform: uppercase;">Política de Privacidad</a>
+          <a href="#" style="color: #666; font-size: 0.75rem; text-transform: uppercase;">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Año dinámico
-      document.getElementById('year').textContent = new Date().getFullYear();
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Lógica del Menú Móvil
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    const icon = navToggle.querySelector('i');
 
-      // ===== Menú responsive accesible =====
-      const navToggle = document.getElementById('navToggle');
-      const siteNav = document.getElementById('siteNav');
-      const navClose = siteNav.querySelector('.nav-close');
-      const navLinks = siteNav.querySelectorAll('.nav-link');
-      let lastFocus = null;
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      
+      // Cambiar icono de hamburguesa a X
+      if (navList.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+        document.body.style.overflow = 'hidden'; // Bloquear scroll
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        document.body.style.overflow = 'auto'; // Reactivar scroll
+      }
+    });
 
-      const openMenu = () => {
-        lastFocus = document.activeElement;
-        document.body.classList.add('menu-open');
-        siteNav.classList.add('is-open');
-        siteNav.setAttribute('aria-hidden', 'false');
-        navToggle.setAttribute('aria-expanded', 'true');
-        // Llevar foco al primer enlace
-        navLinks[0]?.focus();
-      };
-
-      const closeMenu = () => {
-        siteNav.classList.remove('is-open');
-        siteNav.setAttribute('aria-hidden', 'true');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-        // Devolver foco al botón que abrió
-        lastFocus?.focus();
-      };
-
-      const toggleMenu = () => {
-        const isOpen = siteNav.classList.contains('is-open');
-        isOpen ? closeMenu() : openMenu();
-      };
-
-      navToggle.addEventListener('click', toggleMenu);
-      navClose.addEventListener('click', closeMenu);
-      // Cerrar al pulsar en backdrop (área fuera del panel)
-      siteNav.addEventListener('click', (e) => { if (e.target === siteNav) closeMenu(); });
-      // Cerrar al navegar a una ancla
-      navLinks.forEach(link => link.addEventListener('click', closeMenu));
-      // Cerrar con ESC
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && siteNav.classList.contains('is-open')) closeMenu(); });
-      // Reset al pasar a escritorio
-      const mql = window.matchMedia('(min-width: 861px)');
-      mql.addEventListener('change', (e) => { if (e.matches) closeMenu(); });
-
-      // ===== Revelado en scroll =====
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-      }, { threshold: 0.2 });
-      document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        document.body.style.overflow = 'auto';
+      });
     });
   </script>
 </body>
