@@ -3,12 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuga de Flamencos | Escuela, Estudio y Eventos</title>
-  <meta name="description" content="Fuga de Flamencos en Seseña: Escuela de música y danza, estudio de grabación y alquiler de salas para eventos. A 20 min de Madrid." />
-  <meta name="theme-color" content="#FF3DCD" />
   
+  <title>Fuga de Flamencos | Escuela, Estudio y Eventos en Seseña</title>
+  <meta name="description" content="Espacio creativo en Seseña: Escuela de flamenco y música, estudio de grabación profesional y alquiler de salas para eventos privados. A 20 min de Madrid." />
+  <meta name="keywords" content="escuela flamenco seseña, estudio grabación toledo, alquiler sala eventos seseña, clases guitarra, baile flamenco, fiestas privadas madrid sur" />
+  <meta name="author" content="Fuga de Flamencos" />
+  <meta name="theme-color" content="#FF3DCD" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fugadeflamencos.com/" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fugadeflamencos.com/" />
+  <meta property="og:title" content="Fuga de Flamencos | Arte & Música" />
+  <meta property="og:description" content="Escuela, Estudio y Eventos. Tu espacio creativo en Seseña con parking gratuito." />
+  <meta property="og:image" content="https://fugadeflamencos.com/assets/images/og-social-share.jpg" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fuga de Flamencos | Seseña" />
+  <meta name="twitter:description" content="Escuela de música, estudio de grabación y salas para eventos." />
+  <meta name="twitter:image" content="https://fugadeflamencos.com/assets/images/og-social-share.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link rel="preload" as="image" href="assets/images/fdf-hero-1.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Monoton&display=swap" rel="stylesheet">
   <script async defer src="https://use.fontawesome.com/releases/v6.7.2/js/all.js" crossorigin="anonymous"></script>
 
@@ -105,6 +124,7 @@
       clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
       transition: var(--transition);
       text-align: center;
+      cursor: pointer;
     }
     .btn:hover {
       background: transparent;
@@ -243,6 +263,7 @@
       height: 200px;
       border-radius: var(--radius);
       overflow: hidden;
+      background-color: var(--bg-highlight); /* Placeholder para evitar flash */
     }
     .space-item img { width: 100%; height: 100%; transition: transform 0.5s; }
     .space-item:hover img { transform: scale(1.1); }
@@ -264,6 +285,85 @@
     }
     .social-icons a { margin-right: 15px; font-size: 1.4rem; }
     .social-icons a:hover { color: var(--primary); }
+
+    /* =========================================
+       NUEVOS ESTILOS: GESTIÓN DE COOKIES
+       ========================================= */
+    
+    /* Banner Inferior */
+    #cookieBanner {
+      position: fixed; bottom: -100%; left: 0; width: 100%;
+      background: rgba(5, 5, 5, 0.98);
+      border-top: 2px solid var(--primary);
+      padding: 20px; z-index: 9999;
+      box-shadow: 0 -5px 20px rgba(0,0,0,0.7);
+      transition: bottom 0.5s ease-in-out;
+      display: flex; flex-direction: column; gap: 15px;
+      align-items: center; text-align: center;
+    }
+    
+    @media(min-width: 768px) {
+      #cookieBanner {
+        flex-direction: row; justify-content: space-between;
+        text-align: left; padding: 20px 40px;
+      }
+    }
+    
+    .cookie-text { font-size: 0.9rem; color: #ddd; max-width: 800px; }
+    .cookie-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    
+    .btn-cookie {
+      padding: 10px 15px; font-size: 0.8rem; font-weight: 700; 
+      text-transform: uppercase; cursor: pointer; border-radius: 4px;
+      border: 1px solid transparent; transition: var(--transition);
+    }
+    .btn-accept { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .btn-accept:hover { background: var(--primary-dark); }
+    
+    .btn-deny { background: transparent; color: #fff; border-color: #666; }
+    .btn-deny:hover { border-color: #fff; }
+
+    .btn-settings { background: transparent; color: var(--text-muted); text-decoration: underline; border: none; }
+    .btn-settings:hover { color: var(--primary); }
+
+    /* Modal de Personalización */
+    .cookie-modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px);
+      z-index: 10000; display: none; align-items: center; justify-content: center;
+    }
+    .cookie-modal-overlay.active { display: flex; }
+    
+    .cookie-modal {
+      background: var(--bg-card);
+      border: 1px solid var(--primary);
+      padding: 30px; border-radius: var(--radius);
+      width: 90%; max-width: 500px;
+      box-shadow: 0 0 30px rgba(255, 61, 205, 0.2);
+    }
+    
+    .cookie-option {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;
+    }
+    .cookie-option h4 { margin: 0 0 5px 0; color: #fff; }
+    .cookie-option p { margin: 0; font-size: 0.8rem; }
+    
+    /* Toggle Switch simple */
+    .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #333; transition: .4s; border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px;
+      background-color: white; transition: .4s; border-radius: 50%;
+    }
+    input:checked + .slider { background-color: var(--primary); }
+    input:checked + .slider:before { transform: translateX(20px); }
+    input:disabled + .slider { opacity: 0.5; cursor: not-allowed; }
+
 
     /* =========================================
        MEDIA QUERIES (RESPONSIVE)
@@ -322,17 +422,53 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "MusicSchool",
+        "@id": "https://fugadeflamencos.com/#school",
+        "name": "Fuga de Flamencos Escuela",
+        "url": "https://fugadeflamencos.com/",
+        "image": "https://fugadeflamencos.com/assets/images/fdf-action-0.webp",
+        "description": "Escuela de música y flamenco en Seseña. Clases de guitarra, cajón, baile y piano.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle del Greco 3",
+          "addressLocality": "Seseña",
+          "postalCode": "45223",
+          "addressRegion": "Toledo",
+          "addressCountry": "ES"
+        },
+        "priceRange": "$$",
+        "telephone": "+34 667 236 500"
+      },
+      {
+        "@type": "RecordingStudio",
+        "@id": "https://fugadeflamencos.com/#studio",
+        "name": "Fuga de Flamencos Estudio",
+        "telephone": "+34 667 236 500",
+        "location": { "@id": "https://fugadeflamencos.com/#school" }
+      },
+      {
+        "@type": "EventVenue",
+        "@id": "https://fugadeflamencos.com/#venue",
+        "name": "Sala de Eventos Fuga de Flamencos",
+        "description": "Alquiler de sala para eventos privados, fiestas temáticas y rodajes en Seseña.",
+        "location": { "@id": "https://fugadeflamencos.com/#school" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fugadeflamencos.com/#website",
+        "url": "https://fugadeflamencos.com/",
+        "name": "Fuga de Flamencos"
+      },
+      {
         "@type": "Organization",
         "@id": "https://fugadeflamencos.com/#org",
         "name": "Fuga de Flamencos",
-        "url": "https://fugadeflamencos.com/",
-        "logo": "https://i.imgur.com/G5g2B7B.png",
-        "image": "https://i.imgur.com/2sA2Q5m.jpg",
-        "address": {"@type": "PostalAddress","addressLocality": "Seseña","addressCountry": "ES"},
-        "contactPoint": {"@type": "ContactPoint","contactType": "Atención comercial","telephone": "+34 667 236 500","email": "info@fugadeflamencos.com","areaServed": "ES","availableLanguage": ["es"]},
-        "sameAs": ["https://www.facebook.com/","https://www.instagram.com/","https://www.youtube.com/"]
-      },
-      {"@type": "WebSite","@id": "https://fugadeflamencos.com/#website","url": "https://fugadeflamencos.com/","name": "Fuga de Flamencos"}
+        "sameAs": [
+           "https://www.instagram.com/fugadeflamencos",
+           "https://www.facebook.com/",
+           "https://www.youtube.com/"
+        ]
+      }
     ]
   }
   </script>
@@ -355,6 +491,7 @@
           <li><a href="#estudio" class="nav-link">Estudio</a></li>
           <li><a href="#espacios" class="nav-link">Espacios</a></li>
           <li><a href="#eventos" class="nav-link">Eventos</a></li>
+		  <li><a href="./reservas/" class="nav-link" style="color:var(--primary)">Reservar Online</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
@@ -388,10 +525,10 @@
             <ul class="feature-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
               <li>Guitarra</li>
               <li>Cajón</li>
-              <li>Cante</li>
-              <li>Piano</li>
-			  <li>Saxo</li>
               <li>Baile Flamenco</li>
+              <li>Piano</li>
+              <li>Saxo</li>
+              <li>Flauta Travesera</li>
             </ul>
             
             <hr style="border:0; border-top:1px solid #444; margin: 20px 0;">
@@ -407,7 +544,7 @@
         </div>
         
         <div>
-           <img src="assets/images/fdf-action-0.webp" alt="Clase de baile flamenco" style="border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #333;">
+           <img src="assets/images/fdf-action-0.webp" alt="Clase de baile flamenco" width="600" height="400" loading="lazy" decoding="async" style="border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #333;">
         </div>
       </div>
     </div>
@@ -421,9 +558,9 @@
           <i class="fas fa-microphone-lines card-icon"></i>
           <h3>Estudio Multimedia</h3>
           <ul class="feature-list">
-            <li>Grabación de Audio</li>
-            <li>Estudio Fotografía</li>
-            <li>Video Clips</li>
+            <li>Audio, Voces e Instrumentales</li>
+            <li>Podcasts y Entrevistas</li>
+            <li>Fotografía y Video Clips</li>
             <li>Producción Musical</li>
           </ul>
         </article>
@@ -475,19 +612,19 @@
         
         <div class="spaces-grid">
           <div class="space-item">
-            <img src="assets/images/fdf-action-1.webp" alt="Estudio de Grabación">
+            <img src="assets/images/fdf-action-1.webp" alt="Estudio de Grabación" width="400" height="300" loading="lazy" decoding="async">
             <div class="space-label">Estudio</div>
           </div>
           <div class="space-item">
-            <img src="assets/images/fdf-action-4.webp" alt="Sala de Ensayo">
+            <img src="assets/images/fdf-action-4.webp" alt="Sala de Ensayo" width="400" height="300" loading="lazy" decoding="async">
             <div class="space-label">Ensayo</div>
           </div>
           <div class="space-item">
-             <img src="assets/images/fdf-action-3.webp" alt="Sala de Grabación">
+             <img src="assets/images/fdf-action-3.webp" alt="Sala de Grabación" width="400" height="300" loading="lazy" decoding="async">
             <div class="space-label">Grabación</div>
           </div>
           <div class="space-item">
-            <img src="assets/images/fdf-stage-logo-final.webp" alt="Sala de Eventos">
+            <img src="assets/images/fdf-stage-logo-final.webp" alt="Sala de Eventos" width="400" height="300" loading="lazy" decoding="async">
             <div class="space-label">Sala de Eventos</div>
           </div>
         </div>
@@ -536,6 +673,51 @@
     </div>
   </footer>
 
+  <div id="cookieBanner">
+    <div class="cookie-text">
+      <strong>Privacidad.</strong> Utilizamos cookies propias y de terceros para gestionar las reservas, analizar el tráfico y mejorar tu experiencia.
+      <a href="aviso-legal.html" style="color:var(--primary); text-decoration:underline;">Leer más</a>
+    </div>
+    <div class="cookie-buttons">
+      <button id="btnDeny" class="btn-cookie btn-deny">Denegar</button>
+      <button id="btnSettings" class="btn-cookie btn-settings">Personalizar</button>
+      <button id="btnAccept" class="btn-cookie btn-accept">Aceptar Todo</button>
+    </div>
+  </div>
+
+  <div id="cookieModalOverlay" class="cookie-modal-overlay">
+    <div class="cookie-modal">
+      <h3 class="text-highlight" style="margin-top:0;">Configuración de Cookies</h3>
+      <p>Selecciona qué cookies deseas aceptar.</p>
+      
+      <div class="cookie-option">
+        <div>
+          <h4>Técnicas / Necesarias</h4>
+          <p class="text-muted">Imprescindibles para que la web funcione.</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked disabled>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="cookie-option">
+        <div>
+          <h4>Analíticas / Marketing</h4>
+          <p class="text-muted">Para mejorar nuestros servicios (Google Analytics, etc).</p>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="marketingCookies">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+         <button id="btnSavePreferences" class="btn-cookie btn-accept">Guardar Preferencias</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Año automático
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -547,20 +729,17 @@
 
     navToggle.addEventListener('click', () => {
       navList.classList.toggle('active');
-      
-      // Cambiar icono de hamburguesa a X
       if (navList.classList.contains('active')) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
-        document.body.style.overflow = 'hidden'; // Bloquear scroll
+        document.body.style.overflow = 'hidden'; 
       } else {
         icon.classList.remove('fa-times');
         icon.classList.add('fa-bars');
-        document.body.style.overflow = 'auto'; // Reactivar scroll
+        document.body.style.overflow = 'auto'; 
       }
     });
 
-    // Cerrar menú al hacer clic en un enlace
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navList.classList.remove('active');
@@ -568,6 +747,66 @@
         icon.classList.add('fa-bars');
         document.body.style.overflow = 'auto';
       });
+    });
+
+    // =========================================
+    // LÓGICA DE COOKIES (BANNER + MODAL)
+    // =========================================
+    const cookieBanner = document.getElementById('cookieBanner');
+    const modalOverlay = document.getElementById('cookieModalOverlay');
+    
+    // Botones
+    const btnAccept = document.getElementById('btnAccept');
+    const btnDeny = document.getElementById('btnDeny');
+    const btnSettings = document.getElementById('btnSettings');
+    const btnSavePreferences = document.getElementById('btnSavePreferences');
+
+    // Comprobar si ya existe decisión guardada
+    if (!localStorage.getItem('fdf_cookies_consent')) {
+      // Mostrar banner con un pequeño retardo
+      setTimeout(() => {
+        cookieBanner.style.bottom = '0';
+      }, 800);
+    }
+
+    // Función para ocultar todo
+    function hideCookieUI() {
+      cookieBanner.style.bottom = '-100%';
+      modalOverlay.classList.remove('active');
+    }
+
+    // 1. Aceptar Todo
+    btnAccept.addEventListener('click', () => {
+      localStorage.setItem('fdf_cookies_consent', 'all');
+      // Aquí se activarían los scripts de Analytics, Pixel, etc.
+      hideCookieUI();
+    });
+
+    // 2. Denegar Todo (salvo técnicas)
+    btnDeny.addEventListener('click', () => {
+      localStorage.setItem('fdf_cookies_consent', 'necessary');
+      hideCookieUI();
+    });
+
+    // 3. Abrir Personalización
+    btnSettings.addEventListener('click', () => {
+      modalOverlay.classList.add('active');
+    });
+
+    // Cerrar modal si se hace clic fuera
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('active');
+      }
+    });
+
+    // 4. Guardar Preferencias (desde el modal)
+    btnSavePreferences.addEventListener('click', () => {
+      const marketingCheck = document.getElementById('marketingCookies').checked;
+      const preference = marketingCheck ? 'all' : 'necessary';
+      
+      localStorage.setItem('fdf_cookies_consent', preference);
+      hideCookieUI();
     });
   </script>
 </body>
