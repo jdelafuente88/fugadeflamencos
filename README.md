@@ -3,7 +3,7 @@
 Web corporativa y plataforma de reservas para **FUGA DE FLAMENCOS** (Seseña, Toledo).  
 Proyecto **Full-Responsive**, **SEO-first** y **GDPR Compliant**: HTML5 semántico, Core Web Vitals optimizados, JSON-LD multiservicio, sistema de gestión de cookies granular y motor de reservas integrado.
 
-![Hero preview](https://i.imgur.com/2sA2Q5m.jpg)
+![Hero preview](assets/images/fdf-stage-logo-final.webp)
 
 ---
 
@@ -46,3 +46,4 @@ Proyecto **Full-Responsive**, **SEO-first** y **GDPR Compliant**: HTML5 semánti
 └── assets/
     ├── images/             # Imágenes optimizadas (WebP/JPG)
     └── fonts/              # (Opcional si se alojan localmente)
+
