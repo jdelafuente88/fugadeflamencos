@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <title>Aviso Legal | Fuga de Flamencos</title>
+  <title>Política de Cookies | Fuga de Flamencos</title>
   <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#FF3DCD" />
   
@@ -62,6 +62,8 @@
       padding-left: 15px; margin-top: 40px; margin-bottom: 20px; 
       text-transform: uppercase; font-size: clamp(1.2rem, 4vw, 1.5rem);
     }
+    
+    h3 { font-size: 1.1rem; color: #fff; margin-top: 25px; margin-bottom: 10px; font-weight: 700; }
 
     p, li { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
     
@@ -117,6 +119,15 @@
     .legal-box li { margin-bottom: 10px; }
     .legal-box a { color: var(--primary); }
     .legal-box a:hover { color: #fff; text-decoration: underline; }
+
+    /* Tabla de Cookies */
+    .cookie-table {
+      width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem;
+    }
+    .cookie-table th, .cookie-table td {
+      border: 1px solid #333; padding: 12px; text-align: left; color: var(--text-muted);
+    }
+    .cookie-table th { background: #1a1a1a; color: #fff; font-weight: bold; }
 
     /* =========================================
        FOOTER
@@ -192,6 +203,11 @@
       .nav-link { font-size: 1.5rem; }
       .legal-container { margin-top: 100px; padding: 0 15px; }
       .legal-box { padding: 25px; }
+      .cookie-table, .cookie-table tbody, .cookie-table tr, .cookie-table td { display: block; width: 100%; }
+      .cookie-table thead { display: none; }
+      .cookie-table tr { margin-bottom: 20px; border: 1px solid #333; }
+      .cookie-table td { border: none; border-bottom: 1px solid #333; padding-left: 50%; position: relative; }
+      .cookie-table td::before { content: attr(data-label); position: absolute; left: 10px; font-weight: bold; color: var(--primary); }
       .footer-grid { text-align: center; }
     }
   </style>
@@ -213,7 +229,6 @@
           <li><a href="/index.html#escuela" class="nav-link">Escuela</a></li>
           <li><a href="/index.html#estudio" class="nav-link">Estudio</a></li>
           <li><a href="/index.html#espacios" class="nav-link">Espacios</a></li>
-          <li><a href="/index.html#eventos" class="nav-link">Eventos</a></li>
           <li><a href="/reservas/" class="nav-link" style="color:var(--primary)">Reservar Online</a></li>
           <li><a href="/index.html#contacto" class="nav-link">Contacto</a></li>
         </ul>
@@ -222,39 +237,63 @@
   </header>
 
   <main class="legal-container">
-    <h1>Aviso <span style="color:var(--primary)">Legal</span></h1>
+    <h1>Política de <span style="color:var(--primary)">Cookies</span></h1>
     
     <div class="legal-box">
-      <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), a continuación se reflejan los siguientes datos:</p>
+      <p>En <strong>Fuga de Flamencos</strong> utilizamos cookies con el objetivo de prestar un mejor servicio y proporcionarte una mejor experiencia en tu navegación.</p>
 
-      <h2>1. Datos Identificativos</h2>
-      <p>El titular de este sitio web es <strong>Fuga de Flamencos</strong> (en adelante, "la Empresa").</p>
+      <h2>1. ¿Qué son las Cookies?</h2>
+      <p>Una cookie es un fichero que se descarga en tu ordenador al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de la forma en que utilice su equipo, pueden utilizarse para reconocer al usuario.</p>
+
+      <h2>2. Tipos de Cookies que utilizamos</h2>
+      <p>En este sitio web utilizamos cookies propias y de terceros para conseguir que tengas una mejor experiencia de navegación, puedas compartir contenido en redes sociales y para obtener estadísticas de nuestros usuarios.</p>
+
+      <h3>Según la finalidad:</h3>
       <ul>
-        <li><strong>Titular legal:</strong> [AQUÍ TU NOMBRE O RAZÓN SOCIAL]</li>
-        <li><strong>NIF/CIF:</strong> [AQUÍ TU NIF/CIF]</li>
-        <li><strong>Domicilio:</strong> Calle del Greco 3, 45223 Seseña, Toledo (España).</li>
-        <li><strong>Teléfono:</strong> 667 236 500</li>
-        <li><strong>Correo electrónico:</strong> info@fugadeflamencos.com</li>
+        <li><strong>Cookies Técnicas (Esenciales):</strong> Son aquellas imprescindibles para el funcionamiento de la página web (ej. gestión de reservas). No se pueden desactivar.</li>
+        <li><strong>Cookies de Análisis:</strong> Nos permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización que hacen los usuarios del servicio ofertado (ej. Google Analytics).</li>
+        <li><strong>Cookies de Marketing:</strong> Utilizadas para mostrar publicidad relevante para el usuario.</li>
       </ul>
 
-      <h2>2. Usuarios</h2>
-      <p>El acceso y/o uso de este portal de Fuga de Flamencos atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+      <table class="cookie-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Duración</th>
+            <th>Finalidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Nombre">fdf_cookies_consent</td>
+            <td data-label="Tipo">Técnica</td>
+            <td data-label="Duración">1 año</td>
+            <td data-label="Finalidad">Guarda tus preferencias de consentimiento de cookies.</td>
+          </tr>
+          <tr>
+            <td data-label="Nombre">_ga</td>
+            <td data-label="Tipo">Analítica</td>
+            <td data-label="Duración">2 años</td>
+            <td data-label="Finalidad">Google Analytics: Distinguir a los usuarios.</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h2>3. Uso del Portal</h2>
-      <p>El sitio web proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes a Fuga de Flamencos. El USUARIO asume la responsabilidad del uso del portal, incluyendo el comportamiento en las reservas de salas y uso de las instalaciones (Estudio, Salas de ensayo, etc.).</p>
+      <h2>3. Gestión de Cookies</h2>
+      <p>Puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de las opciones del navegador instalado en tu ordenador:</p>
+      
+      <ul>
+        <li><a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank">Google Chrome</a></li>
+        <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank">Safari</a></li>
+        <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank">Mozilla Firefox</a></li>
+        <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank">Microsoft Edge</a></li>
+      </ul>
 
-      <h2>4. Propiedad Intelectual e Industrial</h2>
-      <p>Fuga de Flamencos por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, etc.).</p>
-      <p>Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Fuga de Flamencos.</p>
+      <p>Ten en cuenta que, si aceptas las cookies de terceros, deberás eliminarlas desde las opciones del navegador o desde el sistema ofrecido por el propio tercero.</p>
 
-      <h2>5. Exclusión de Garantías y Responsabilidad</h2>
-      <p>Fuga de Flamencos no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
-
-      <h2>6. Modificaciones</h2>
-      <p>Fuga de Flamencos se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados.</p>
-
-      <h2>7. Legislación Aplicable y Jurisdicción</h2>
-      <p>La relación entre Fuga de Flamencos y el USUARIO se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Toledo.</p>
+      <h2>4. Actualizaciones</h2>
+      <p>Fuga de Flamencos puede modificar esta Política de Cookies en función de exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos.</p>
     </div>
     
     <div style="text-align: center; margin-top: 40px;">
@@ -289,7 +328,7 @@
         <div class="footer-links">
           <a href="/legal/aviso-legal/">Aviso Legal</a>
           <a href="/legal/privacidad/">Política de Privacidad</a>
-          <a href="/legal/cookies/">Política de Cookies</a>
+          <a href="/legal/cookies/" style="color:var(--primary);">Política de Cookies</a>
         </div>
       </div>
     </div>

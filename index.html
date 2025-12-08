@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <title>Fuga de Flamencos | Escuela, Estudio y Eventos en Seseña</title>
+  <title>Fuga de Flamencos® | Escuela, Estudio y Eventos en Seseña</title>
   <meta name="description" content="Espacio creativo en Seseña: Escuela de flamenco y música, estudio de grabación profesional y alquiler de salas para eventos privados. A 20 min de Madrid." />
   <meta name="keywords" content="escuela flamenco seseña, estudio grabación toledo, alquiler sala eventos seseña, clases guitarra, baile flamenco, fiestas privadas madrid sur" />
   <meta name="author" content="Fuga de Flamencos" />
@@ -14,12 +14,12 @@
   
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fugadeflamencos.com/" />
-  <meta property="og:title" content="Fuga de Flamencos | Arte & Música" />
+  <meta property="og:title" content="Fuga de Flamencos® | Arte & Música" />
   <meta property="og:description" content="Escuela, Estudio y Eventos. Tu espacio creativo en Seseña con parking gratuito." />
   <meta property="og:image" content="https://fugadeflamencos.com/assets/images/og-social-share.jpg" />
   
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fuga de Flamencos | Seseña" />
+  <meta name="twitter:title" content="Fuga de Flamencos® | Seseña" />
   <meta name="twitter:description" content="Escuela de música, estudio de grabación y salas para eventos." />
   <meta name="twitter:image" content="https://fugadeflamencos.com/assets/images/og-social-share.jpg" />
 
@@ -28,15 +28,14 @@
   
   <link rel="preload" as="image" href="assets/images/fdf-hero-1.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Monoton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@700;800;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
   <script async defer src="https://use.fontawesome.com/releases/v6.7.2/js/all.js" crossorigin="anonymous"></script>
 
   <style>
     /* =========================================
-       VARIABLES & RESET
+       RESET & BASE
        ========================================= */
     :root {
-      /* Paleta Neon/Dark */
       --primary: #FF3DCD;
       --primary-dark: #b00085;
       --bg-body: #050505;
@@ -53,33 +52,32 @@
 
     *, *::before, *::after { box-sizing: border-box; }
     
-    html { scroll-behavior: smooth; }
-    
-    body { 
+    html, body { 
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
       margin: 0; 
+      padding: 0;
       font-family: 'Montserrat', sans-serif; 
       background-color: var(--bg-body); 
       color: var(--text-main); 
       line-height: 1.6;
-      overflow-x: hidden; /* Evita scroll horizontal indeseado */
     }
 
     img { max-width: 100%; height: auto; display: block; object-fit: cover; }
     a { text-decoration: none; color: inherit; transition: var(--transition); }
     ul { list-style: none; padding: 0; margin: 0; }
 
-    /* =========================================
-       TIPOGRAFÍA FLUIDA
-       ========================================= */
+    /* Tipografía */
     h1, h2, h3, h4 { margin-top: 0; line-height: 1.2; }
     
-    /* El título usa clamp() para escalar suavemente entre 2.5rem y 5rem */
     h1 { 
-      font-family: 'Monoton', cursive; 
-      font-weight: 400; 
-      font-size: clamp(2.5rem, 8vw, 6rem); 
-      letter-spacing: 2px;
+      font-family: 'Jost', sans-serif; 
+      font-weight: 900; 
+      font-size: clamp(2.5rem, 8vw, 5rem); 
+      letter-spacing: 1px;
       text-transform: uppercase;
+      word-wrap: break-word;
     }
     
     h2 { 
@@ -100,15 +98,15 @@
       margin-bottom: 2rem;
     }
 
-    /* =========================================
-       COMPONENTES UI
-       ========================================= */
+    /* Layout */
     .container { 
       width: 100%; 
       max-width: var(--container); 
       margin: 0 auto; 
       padding: 0 20px; 
     }
+    
+    @media (max-width: 480px) { .container { padding: 0 15px; } }
 
     .section { padding: 80px 0; }
 
@@ -132,7 +130,7 @@
       clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
     }
 
-    /* Grids Responsive */
+    /* Grids */
     .grid-2 { 
       display: grid; 
       grid-template-columns: repeat(2, 1fr); 
@@ -142,16 +140,16 @@
     
     .grid-3 { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
       gap: 30px; 
     }
 
-    /* =========================================
-       HEADER & NAV
-       ========================================= */
+    /* Header Fixed */
     .header {
-      position: sticky; top: 0; z-index: 1000;
-      background: rgba(5, 5, 5, 0.9);
+      position: fixed; 
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 61, 205, 0.2);
       padding: 15px 0;
@@ -160,11 +158,14 @@
     .nav-bar { display: flex; justify-content: space-between; align-items: center; }
     
     .logo { 
-      font-family: 'Monoton'; 
+      font-family: 'Jost', sans-serif; 
+      font-weight: 800;
       font-size: 1.5rem; 
       color: #fff; 
-      z-index: 1001; /* Sobre el menú móvil */
+      text-transform: uppercase;
+      z-index: 1001; 
     }
+    @media(max-width: 360px) { .logo { font-size: 1.2rem; } }
 
     .nav-list { display: flex; gap: 30px; }
     
@@ -182,27 +183,18 @@
 
     .nav-toggle { 
       display: none; 
-      background: none; 
-      border: none; 
-      color: #fff; 
-      font-size: 1.8rem; 
-      cursor: pointer; 
-      z-index: 1001; 
+      background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; z-index: 1001; 
     }
 
-    /* =========================================
-       SECCIONES ESPECÍFICAS
-       ========================================= */
-    
     /* Hero */
     .hero {
       position: relative;
-      min-height: 85vh;
+      min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
       text-align: center;
       background: url('assets/images/fdf-hero-1.png') center/cover no-repeat;
-      background-attachment: fixed; /* Parallax en desktop */
-      padding: 0 20px;
+      background-attachment: fixed; 
+      padding: 80px 20px 0; 
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
@@ -210,7 +202,7 @@
     }
     .hero-content { position: relative; z-index: 2; max-width: 800px; }
     
-    /* Tarjetas (Cards) */
+    /* Tarjetas */
     .card {
       background: var(--bg-card);
       padding: 30px;
@@ -227,7 +219,7 @@
     }
     .card-icon { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
 
-    /* Lista de características */
+    /* Features */
     .feature-list li {
       margin-bottom: 10px;
       padding-left: 20px;
@@ -236,12 +228,10 @@
       color: #ddd;
     }
     .feature-list li::before {
-      content: '>'; 
-      position: absolute; left: 0; 
-      color: var(--primary); font-weight: 800;
+      content: '>'; position: absolute; left: 0; color: var(--primary); font-weight: 800;
     }
 
-    /* Caja USP (Parking) */
+    /* USP */
     .usp-box {
       background: var(--primary);
       color: #000;
@@ -251,7 +241,7 @@
       clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
     }
 
-    /* Grid de Fotos */
+    /* Grid Fotos */
     .spaces-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -263,7 +253,7 @@
       height: 200px;
       border-radius: var(--radius);
       overflow: hidden;
-      background-color: var(--bg-highlight); /* Placeholder para evitar flash */
+      background-color: var(--bg-highlight); 
     }
     .space-item img { width: 100%; height: 100%; transition: transform 0.5s; }
     .space-item:hover img { transform: scale(1.1); }
@@ -276,6 +266,28 @@
       font-size: 0.9rem;
     }
 
+    /* CTA WhatsApp */
+    .wa-section {
+      background: linear-gradient(90deg, #000 0%, #111 100%);
+      padding: 50px 0;
+      text-align: center;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+    .btn-wa-pulse {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #000;
+      padding: 14px 30px; font-weight: 800; text-transform: uppercase;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+      transition: 0.3s;
+    }
+    .btn-wa-pulse:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+      background: #fff;
+    }
+
     /* Footer */
     .footer { background: #000; padding: 60px 0 30px; border-top: 1px solid #222; }
     .footer-grid { 
@@ -286,11 +298,23 @@
     .social-icons a { margin-right: 15px; font-size: 1.4rem; }
     .social-icons a:hover { color: var(--primary); }
 
-    /* =========================================
-       NUEVOS ESTILOS: GESTIÓN DE COOKIES
-       ========================================= */
-    
-    /* Banner Inferior */
+    /* Footer Links Style */
+    .footer-links {
+      display: flex; 
+      justify-content: center; 
+      gap: 20px; 
+      flex-wrap: wrap; 
+      margin-top: 20px;
+    }
+    .footer-links a {
+      color: #666; 
+      font-size: 0.75rem; 
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+    .footer-links a:hover { color: var(--primary); }
+
+    /* Cookies UI */
     #cookieBanner {
       position: fixed; bottom: -100%; left: 0; width: 100%;
       background: rgba(5, 5, 5, 0.98);
@@ -300,6 +324,7 @@
       transition: bottom 0.5s ease-in-out;
       display: flex; flex-direction: column; gap: 15px;
       align-items: center; text-align: center;
+      box-sizing: border-box; 
     }
     
     @media(min-width: 768px) {
@@ -310,27 +335,31 @@
     }
     
     .cookie-text { font-size: 0.9rem; color: #ddd; max-width: 800px; }
-    .cookie-buttons { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    
+    .cookie-buttons { 
+      display: flex; gap: 10px; 
+      flex-wrap: wrap; justify-content: center; 
+    }
     
     .btn-cookie {
       padding: 10px 15px; font-size: 0.8rem; font-weight: 700; 
       text-transform: uppercase; cursor: pointer; border-radius: 4px;
       border: 1px solid transparent; transition: var(--transition);
+      white-space: nowrap; 
     }
     .btn-accept { background: var(--primary); color: #fff; border-color: var(--primary); }
     .btn-accept:hover { background: var(--primary-dark); }
-    
     .btn-deny { background: transparent; color: #fff; border-color: #666; }
     .btn-deny:hover { border-color: #fff; }
-
     .btn-settings { background: transparent; color: var(--text-muted); text-decoration: underline; border: none; }
     .btn-settings:hover { color: var(--primary); }
 
-    /* Modal de Personalización */
+    /* Modal Cookies */
     .cookie-modal-overlay {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px);
       z-index: 10000; display: none; align-items: center; justify-content: center;
+      padding: 15px; 
     }
     .cookie-modal-overlay.active { display: flex; }
     
@@ -338,19 +367,21 @@
       background: var(--bg-card);
       border: 1px solid var(--primary);
       padding: 30px; border-radius: var(--radius);
-      width: 90%; max-width: 500px;
+      width: 100%; max-width: 500px;
       box-shadow: 0 0 30px rgba(255, 61, 205, 0.2);
+      max-height: 85vh; 
+      overflow-y: auto;
     }
     
     .cookie-option {
       display: flex; justify-content: space-between; align-items: center;
       margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px;
     }
-    .cookie-option h4 { margin: 0 0 5px 0; color: #fff; }
-    .cookie-option p { margin: 0; font-size: 0.8rem; }
+    .cookie-option h4 { margin: 0 0 5px 0; color: #fff; font-size: 1rem; }
+    .cookie-option p { margin: 0; font-size: 0.8rem; color: #aaa; }
     
-    /* Toggle Switch simple */
-    .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+    /* Switch */
+    .switch { position: relative; display: inline-block; width: 40px; height: 20px; flex-shrink: 0; }
     .switch input { opacity: 0; width: 0; height: 0; }
     .slider {
       position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
@@ -364,55 +395,36 @@
     input:checked + .slider:before { transform: translateX(20px); }
     input:disabled + .slider { opacity: 0.5; cursor: not-allowed; }
 
-
-    /* =========================================
-       MEDIA QUERIES (RESPONSIVE)
-       ========================================= */
-
-    /* Tablet (max-width: 1024px) */
+    /* Media Queries */
     @media (max-width: 1024px) {
       .section { padding: 60px 0; }
       .container { padding: 0 30px; }
-      .hero { background-attachment: scroll; /* Mejor rendimiento en tablets */ }
+      .hero { background-attachment: scroll; }
     }
 
-    /* Móvil (max-width: 768px) */
     @media (max-width: 768px) {
-      /* Navegación */
       .nav-toggle { display: block; }
       .nav-list {
-        position: fixed;
-        top: 0; right: 0;
-        width: 100%; height: 100vh;
+        position: fixed; top: 0; right: 0; width: 100%; height: 100vh;
         background: #000;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transform: translateX(100%);
-        transition: transform 0.4s ease;
-        z-index: 1000;
+        flex-direction: column; justify-content: center; align-items: center;
+        gap: 40px; transform: translateX(100%); transition: transform 0.4s ease; z-index: 1000;
       }
       .nav-list.active { transform: translateX(0); }
       .nav-link { font-size: 1.5rem; }
-
-      /* Layout */
       .grid-2 { grid-template-columns: 1fr; gap: 40px; }
       .usp-box { clip-path: none; border-radius: var(--radius); }
-      
-      /* Espacios: hacer las imágenes más altas en móvil */
       .space-item { height: 250px; } 
     }
 
-    /* Móvil Pequeño (max-width: 480px) */
     @media (max-width: 480px) {
-      .hero-title { font-size: 14vw; } /* Ajuste agresivo para Monoton */
+      .hero-title { font-size: 14vw; } 
       .btn { width: 100%; clip-path: none; border-radius: 4px; }
       .spaces-grid { grid-template-columns: 1fr; }
       .card { padding: 20px; }
       .section-title { font-size: 1.8rem; }
-      
-      /* Forzar orden visual en secciones alternas si fuera necesario */
+      .cookie-modal { padding: 20px; }
+      .cookie-option h4 { font-size: 0.9rem; }
       .grid-2 > div:nth-child(2) { margin-top: 20px; }
     }
   </style>
@@ -436,38 +448,13 @@
           "addressRegion": "Toledo",
           "addressCountry": "ES"
         },
-        "priceRange": "$$",
         "telephone": "+34 667 236 500"
-      },
-      {
-        "@type": "RecordingStudio",
-        "@id": "https://fugadeflamencos.com/#studio",
-        "name": "Fuga de Flamencos Estudio",
-        "telephone": "+34 667 236 500",
-        "location": { "@id": "https://fugadeflamencos.com/#school" }
-      },
-      {
-        "@type": "EventVenue",
-        "@id": "https://fugadeflamencos.com/#venue",
-        "name": "Sala de Eventos Fuga de Flamencos",
-        "description": "Alquiler de sala para eventos privados, fiestas temáticas y rodajes en Seseña.",
-        "location": { "@id": "https://fugadeflamencos.com/#school" }
       },
       {
         "@type": "WebSite",
         "@id": "https://fugadeflamencos.com/#website",
         "url": "https://fugadeflamencos.com/",
         "name": "Fuga de Flamencos"
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://fugadeflamencos.com/#org",
-        "name": "Fuga de Flamencos",
-        "sameAs": [
-           "https://www.instagram.com/fugadeflamencos",
-           "https://www.facebook.com/",
-           "https://www.youtube.com/"
-        ]
       }
     ]
   }
@@ -547,6 +534,16 @@
            <img src="assets/images/fdf-action-0.webp" alt="Clase de baile flamenco" width="600" height="400" loading="lazy" decoding="async" style="border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #333;">
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="wa-section">
+    <div class="container">
+      <h3 style="color: #fff; margin-bottom: 20px; font-size: 1.5rem;">¿Tienes dudas? Te atendemos por WhatsApp</h3>
+      <a href="https://wa.me/34667236500" class="btn-wa-pulse" target="_blank">
+        <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i>
+        Escribir Ahora
+      </a>
     </div>
   </section>
 
@@ -655,6 +652,7 @@
             <a href="https://instagram.com/fugadeflamencos" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@fugadeflamencos" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
           </div>
           <p style="margin-top: 15px; font-size: 0.9rem;">@fugadeflamencos</p>
         </div>
@@ -662,12 +660,12 @@
       
       <div style="border-top: 1px solid #222; padding-top: 30px; margin-top: 50px; text-align: center;">
         <p style="font-size: 0.8rem; color: #666; margin-bottom: 10px;">
-          &copy; <span id="year"></span> Fuga de Flamencos. Todos los derechos reservados.
+          &copy; <span id="year"></span> Fuga de Flamencos®. Todos los derechos reservados.
         </p>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-          <a href="aviso-legal.html" style="color: #666; font-size: 0.75rem; text-transform: uppercase;">Aviso Legal</a>
-          <a href="#" style="color: #666; font-size: 0.75rem; text-transform: uppercase;">Política de Privacidad</a>
-          <a href="#" style="color: #666; font-size: 0.75rem; text-transform: uppercase;">Cookies</a>
+        <div class="footer-links">
+          <a href="/legal/aviso-legal/">Aviso Legal</a>
+          <a href="/legal/privacidad/">Política de Privacidad</a>
+          <a href="/legal/cookies/">Política de Cookies</a>
         </div>
       </div>
     </div>
@@ -675,8 +673,8 @@
 
   <div id="cookieBanner">
     <div class="cookie-text">
-      <strong>Privacidad.</strong> Utilizamos cookies propias y de terceros para gestionar las reservas, analizar el tráfico y mejorar tu experiencia.
-      <a href="aviso-legal.html" style="color:var(--primary); text-decoration:underline;">Leer más</a>
+      <strong>Privacidad.</strong> Utilizamos cookies propias y de terceros para gestionar las reservas y analizar el tráfico.
+      <a href="/legal/cookies/" style="color:var(--primary); text-decoration:underline;">Leer más</a>
     </div>
     <div class="cookie-buttons">
       <button id="btnDeny" class="btn-cookie btn-deny">Denegar</button>
@@ -688,28 +686,19 @@
   <div id="cookieModalOverlay" class="cookie-modal-overlay">
     <div class="cookie-modal">
       <h3 class="text-highlight" style="margin-top:0;">Configuración de Cookies</h3>
-      <p>Selecciona qué cookies deseas aceptar.</p>
+      <p style="margin-bottom:20px;">Selecciona qué cookies deseas aceptar.</p>
       
       <div class="cookie-option">
-        <div>
-          <h4>Técnicas / Necesarias</h4>
-          <p class="text-muted">Imprescindibles para que la web funcione.</p>
-        </div>
-        <label class="switch">
-          <input type="checkbox" checked disabled>
-          <span class="slider"></span>
-        </label>
+        <div><h4>Esenciales</h4><p>Imprescindibles para que la web funcione.</p></div>
+        <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
       </div>
-
       <div class="cookie-option">
-        <div>
-          <h4>Analíticas / Marketing</h4>
-          <p class="text-muted">Para mejorar nuestros servicios (Google Analytics, etc).</p>
-        </div>
-        <label class="switch">
-          <input type="checkbox" id="marketingCookies">
-          <span class="slider"></span>
-        </label>
+        <div><h4>Analíticas</h4><p>Nos ayudan a mejorar entendiendo cómo usas la web.</p></div>
+        <label class="switch"><input type="checkbox" id="analyticsCookies"><span class="slider"></span></label>
+      </div>
+      <div class="cookie-option">
+        <div><h4>Marketing</h4><p>Para mostrarte publicidad relevante.</p></div>
+        <label class="switch"><input type="checkbox" id="marketingCookies"><span class="slider"></span></label>
       </div>
 
       <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
@@ -719,10 +708,9 @@
   </div>
 
   <script>
-    // Año automático
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    // Lógica del Menú Móvil
+    // Menú
     const navToggle = document.getElementById('navToggle');
     const navList = document.getElementById('navList');
     const icon = navToggle.querySelector('i');
@@ -730,12 +718,10 @@
     navToggle.addEventListener('click', () => {
       navList.classList.toggle('active');
       if (navList.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
+        icon.classList.remove('fa-bars'); icon.classList.add('fa-times');
         document.body.style.overflow = 'hidden'; 
       } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
         document.body.style.overflow = 'auto'; 
       }
     });
@@ -743,69 +729,45 @@
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navList.classList.remove('active');
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times'); icon.classList.add('fa-bars');
         document.body.style.overflow = 'auto';
       });
     });
 
-    // =========================================
-    // LÓGICA DE COOKIES (BANNER + MODAL)
-    // =========================================
+    // Cookies
     const cookieBanner = document.getElementById('cookieBanner');
     const modalOverlay = document.getElementById('cookieModalOverlay');
-    
-    // Botones
     const btnAccept = document.getElementById('btnAccept');
     const btnDeny = document.getElementById('btnDeny');
     const btnSettings = document.getElementById('btnSettings');
     const btnSavePreferences = document.getElementById('btnSavePreferences');
 
-    // Comprobar si ya existe decisión guardada
     if (!localStorage.getItem('fdf_cookies_consent')) {
-      // Mostrar banner con un pequeño retardo
-      setTimeout(() => {
-        cookieBanner.style.bottom = '0';
-      }, 800);
+      setTimeout(() => { cookieBanner.style.bottom = '0'; }, 800);
     }
 
-    // Función para ocultar todo
     function hideCookieUI() {
       cookieBanner.style.bottom = '-100%';
       modalOverlay.classList.remove('active');
     }
 
-    // 1. Aceptar Todo
     btnAccept.addEventListener('click', () => {
-      localStorage.setItem('fdf_cookies_consent', 'all');
-      // Aquí se activarían los scripts de Analytics, Pixel, etc.
+      localStorage.setItem('fdf_cookies_consent', JSON.stringify({ necessary: true, analytics: true, marketing: true }));
       hideCookieUI();
     });
 
-    // 2. Denegar Todo (salvo técnicas)
     btnDeny.addEventListener('click', () => {
-      localStorage.setItem('fdf_cookies_consent', 'necessary');
+      localStorage.setItem('fdf_cookies_consent', JSON.stringify({ necessary: true, analytics: false, marketing: false }));
       hideCookieUI();
     });
 
-    // 3. Abrir Personalización
-    btnSettings.addEventListener('click', () => {
-      modalOverlay.classList.add('active');
-    });
+    btnSettings.addEventListener('click', () => modalOverlay.classList.add('active'));
+    modalOverlay.addEventListener('click', (e) => { if(e.target === modalOverlay) modalOverlay.classList.remove('active'); });
 
-    // Cerrar modal si se hace clic fuera
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) {
-        modalOverlay.classList.remove('active');
-      }
-    });
-
-    // 4. Guardar Preferencias (desde el modal)
     btnSavePreferences.addEventListener('click', () => {
-      const marketingCheck = document.getElementById('marketingCookies').checked;
-      const preference = marketingCheck ? 'all' : 'necessary';
-      
-      localStorage.setItem('fdf_cookies_consent', preference);
+      const analytics = document.getElementById('analyticsCookies').checked;
+      const marketing = document.getElementById('marketingCookies').checked;
+      localStorage.setItem('fdf_cookies_consent', JSON.stringify({ necessary: true, analytics, marketing }));
       hideCookieUI();
     });
   </script>
